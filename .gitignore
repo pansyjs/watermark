@@ -1,0 +1,31 @@
+# Log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test
+coverage
+
+# Dependency directories
+node_modules
+
+package-lock.json
+
+# build output
+es
+lib
+dist
+
+# IDE
+.idea
+.vscode
+
+.DS_Store
+
+# Umi
+.umi
+.umi-production
+
+# Local
+local.config.ts
+yarn.lock

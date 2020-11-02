@@ -1,0 +1,21 @@
+{
+  "name": "@pansy/watermark",
+  "version": "1.0.0",
+  "main": "dist/watermark.js",
+  "module": "dist/watermark.module.js",
+  "source": "src/index.ts",
+  "types": "dist/watermark.d.ts",
+  "repository": "git@github.com:pansyjs/watermark.git",
+  "author": "wangxingkang <156148958@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "microbundle --format es,cjs,umd"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "devDependencies": {
+    "microbundle": "^0.12.4"
+  }
+}
