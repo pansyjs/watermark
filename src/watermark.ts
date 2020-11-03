@@ -24,6 +24,8 @@ const observeOptions = {
 
 class Watermark {
   private options: WatermarkOptions;
+  private shadowRoot: ShadowRoot | HTMLElement | undefined;
+  private watermarkParentDom: HTMLDivElement | undefined;
   private container: HTMLElement | undefined;
   private watermarkDom: HTMLElement | undefined;
   private mutationObserver: any;
@@ -36,10 +38,9 @@ class Watermark {
     this.style = {
       position: 'absolute',
       left: 0,
-      right: 0,
       top: 0,
+      right: 0,
       bottom: 0,
-      opacity: 1,
       pointerEvents: 'none',
       overflow: 'hidden',
       backgroundColor: 'transparent',
@@ -69,6 +70,20 @@ class Watermark {
     return getDrawPattern(this.options)
   }
 
+  getWatermarkDom = (height: number) => {
+    if (!this.watermarkDom) {
+      this.watermarkDom = document.createElement('div');
+    }
+
+    this.watermarkDom.setAttribute('style', getStyleStr({
+      ...this.style,
+      height: height > 0 ? `${height}px` : undefined,
+      backgroundImage: `url("${this.getCanvasUrl()}")`
+    }));
+
+    return this.watermarkDom;
+  }
+
   /**
    * 绘制水印
    */
@@ -76,26 +91,53 @@ class Watermark {
     this.container = this.options.container || document.body;
     const MutationObserver = getMutationObserver();
 
-    if (this.options.useContainer && this.container) {
-      this.watermarkDom = this.container;
+    // 解决滚动区域无水印问题
+    let height = 0;
+
+    if (this.options.container) {
+      if (this.container.parentNode) {
+        height = Math.max(this.container.parentNode?.['scrollHeight'], this.container.parentNode?.['clientHeight'])
+      }
     } else {
-      this.watermarkDom = document.createElement('div');
+      height = Math.max(this.container.scrollHeight, this.container.clientHeight);
     }
 
-    const waterMarkStyle = getStyleStr({
-      ...this.style,
-      backgroundImage: `url("${this.getCanvasUrl()}")`
-    });
+    // 获取水印DOM
+    const watermaskDom = this.getWatermarkDom(height);
 
-    this.watermarkDom.setAttribute('style', waterMarkStyle);
+    // 删除已有水印
+    if (this.watermarkParentDom) {
+      const childs = this.watermarkParentDom.childNodes || [];
 
-    if (!this.options.useContainer) {
-      this.watermarkDom?.remove();
-      this.container.append(this.watermarkDom);
+      for(let i = childs.length - 1; i >= 0; i--) {
+        this.watermarkParentDom.removeChild(childs[i]);
+      }
     }
+
+    if (!this.watermarkParentDom) {
+      // 水印父节点
+      this.watermarkParentDom = document.createElement('div');
+      this.watermarkParentDom.setAttribute('style', getStyleStr({
+        pointerEvents: 'none'
+      }));
+
+      // 判断是否支持 Shadow DOM
+      if (typeof this.watermarkParentDom.attachShadow === 'function') {
+        this.shadowRoot = this.watermarkParentDom.attachShadow({
+          mode: 'open'
+        });
+      } else {
+        this.shadowRoot = this.watermarkParentDom;
+      }
+    } else if (this.watermarkParentDom.shadowRoot){
+      this.shadowRoot =this.watermarkParentDom.shadowRoot;
+    }
+
+    this.container.appendChild(this.watermarkParentDom);
+    this.shadowRoot?.append(watermaskDom);
 
     if (MutationObserver && this.options.monitor) {
-      //直接删除组件节点，无法重新生成
+      // 直接删除容器节点，无法重新生成
       this.mutationObserver = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
           // 修改样式则重新生成
@@ -109,8 +151,8 @@ class Watermark {
           }
         })
       });
-      this.mutationObserver.observe(this.watermarkDom, observeOptions);
       this.mutationObserver.observe(this.container, observeOptions);
+      this.mutationObserver.observe(this.watermarkParentDom, observeOptions);
     }
   }
 
@@ -119,9 +161,9 @@ class Watermark {
    */
   destroy() {
     this.container = undefined;
-    this.mutationObserver = undefined;
 
     this.watermarkDom?.remove();
+    this.watermarkParentDom?.remove();
     this.mutationObserver?.disconnect();
     this.mutationObserver = undefined;
   }
