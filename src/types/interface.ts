@@ -51,5 +51,4 @@ export interface WatermarkOptions extends StyleConfig {
    * @default body
    */
   container?: HTMLElement | undefined;
-  useContainer?: boolean;
 }
