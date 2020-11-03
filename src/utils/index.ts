@@ -1,10 +1,11 @@
+/// <reference types="../types/index" />
+
 export { default as getDrawPattern } from './get-draw-pattern';
 
 /**
  * 获取 MutationObserver 对象
  */
 export function getMutationObserver(): typeof MutationObserver  {
-  // @ts-ignore
   return window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
 }
 
