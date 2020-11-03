@@ -10,7 +10,8 @@ function getDrawPatternByCanvas(
     fontSize,
     fontWeight,
     fontFamily,
-    fontColor
+    fontColor,
+    textAlign
   }: WatermarkOptions
 ) {
   const canvas = document.createElement('canvas');
@@ -27,7 +28,7 @@ function getDrawPatternByCanvas(
   // 设置字体
   ctx.font = `normal ${fontWeight} ${fontSize}px '${fontFamily}'`;
 
-  ctx.textAlign = 'center';
+  ctx.textAlign = textAlign;
 
   // 设置旋转角度
   ctx.translate(parseFloat(`${width}`) / 2, parseFloat(`${height}`) / 2);
