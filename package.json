@@ -4,7 +4,7 @@
   "main": "dist/watermark.js",
   "module": "dist/watermark.module.js",
   "source": "src/index.ts",
-  "types": "dist/watermark.d.ts",
+  "types": "dist/index.d.ts",
   "repository": "git@github.com:pansyjs/watermark.git",
   "author": "wangxingkang <156148958@qq.com>",
   "license": "MIT",
