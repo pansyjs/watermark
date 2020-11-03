@@ -1,5 +1,5 @@
 import { WatermarkOptions } from './types/interface';
-import { getMutationObserver, getDrawPattern, getStyleStr }  from './utils';
+import { getMutationObserver, getDrawPattern, getStyleStr, genRandomId }  from './utils';
 
 const defaultOptions: Partial<WatermarkOptions> = {
   width: 160,
@@ -11,7 +11,8 @@ const defaultOptions: Partial<WatermarkOptions> = {
   fontFamily: 'sans-serif',
   fontSize: 14,
   monitor: true,
-  zIndex: 9999
+  zIndex: 9999,
+  textAlign: 'center'
 }
 
 const observeOptions = {
@@ -28,6 +29,8 @@ class Watermark {
   private watermarkParentDom: HTMLDivElement | undefined;
   private container: HTMLElement | undefined;
   private watermarkDom: HTMLElement | undefined;
+  private watermarkParentId: string;
+  private watermarkId: string;
   private mutationObserver: any;
   private style: {
     [key: string]: any;
@@ -47,6 +50,8 @@ class Watermark {
       backgroundRepeat: 'repeat'
     }
     this.style.zIndex = this.options.zIndex;
+    this.watermarkId = genRandomId('watermark');
+    this.watermarkParentId = genRandomId('watermark');
   }
 
   /**
@@ -73,6 +78,7 @@ class Watermark {
   getWatermarkDom = (height: number) => {
     if (!this.watermarkDom) {
       this.watermarkDom = document.createElement('div');
+      this.watermarkDom.setAttribute('data-1', this.watermarkId)
     }
 
     this.watermarkDom.setAttribute('style', getStyleStr({
@@ -90,6 +96,8 @@ class Watermark {
   render() {
     this.container = this.options.container || document.body;
     const MutationObserver = getMutationObserver();
+
+    this.mutationObserver?.disconnect();
 
     // 解决滚动区域无水印问题
     let height = 0;
@@ -117,6 +125,7 @@ class Watermark {
     if (!this.watermarkParentDom) {
       // 水印父节点
       this.watermarkParentDom = document.createElement('div');
+      this.watermarkParentDom.setAttribute('data-1', this.watermarkId)
       this.watermarkParentDom.setAttribute('style', getStyleStr({
         pointerEvents: 'none'
       }));
@@ -141,19 +150,28 @@ class Watermark {
       this.mutationObserver = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
           // 修改样式则重新生成
-          if (mutation.type === 'attributes') {
+          if (
+            mutation.type === 'attributes' &&
+            [this.watermarkId, this.watermarkParentId].indexOf(this.getNodeRandomId(mutation.target))) {
             this.render();
             return;
           }
-          if (mutation.removedNodes.length) {
+
+          if (
+            mutation.removedNodes.length &&
+            [this.watermarkId, this.watermarkParentId].indexOf((this.getNodeRandomId(mutation.removedNodes[0]))) >= 0) {
             this.render();
             return;
           }
         })
       });
       this.mutationObserver.observe(this.container, observeOptions);
-      this.mutationObserver.observe(this.watermarkParentDom, observeOptions);
+      this.watermarkParentDom.shadowRoot && this.mutationObserver.observe(this.watermarkParentDom.shadowRoot, observeOptions);
     }
+  }
+
+  getNodeRandomId = (node: Node) => {
+    return node?.['dataset']?.['1'];
   }
 
   /**

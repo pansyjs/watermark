@@ -31,6 +31,10 @@ export interface StyleConfig {
    * 规定字体系列
    */
   fontFamily: string;
+  /**
+   * 文本位置
+   */
+  textAlign: CanvasTextDrawingStyles['textAlign'];
 }
 
 export interface WatermarkOptions extends StyleConfig {
