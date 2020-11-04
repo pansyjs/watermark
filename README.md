@@ -21,9 +21,9 @@ yarn add @pansy/watermark
 
 [Demo](https://react-components-vert.vercel.app/components/basic/watermark)
 
-## 🚗 框架实现
+## 🚗 框架封装
 
-- [@pansy/react-watermark](https://github.com/pansyjs/react-components/tree/master/packages/watermark)
+- React [@pansy/react-watermark](https://github.com/pansyjs/react-components/tree/master/packages/watermark)
 
 ## 🔨 使用
 ```ts
