@@ -17,9 +17,13 @@ npm install @pansy/watermark --save
 yarn add @pansy/watermark
 ```
 
+## 🚄 示例
+
+[Demo](https://react-components-vert.vercel.app/components/basic/watermark)
+
 ## 🚗 框架实现
 
-- [@pansy/react-watermark](https://github.com/pansyjs/react-components/blob/feat/watermark/packages/watermark/src/index.tsx)
+- [@pansy/react-watermark](https://github.com/pansyjs/react-components/tree/master/packages/watermark)
 
 ## 🔨 使用
 ```ts
