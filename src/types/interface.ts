@@ -59,5 +59,9 @@ export interface WatermarkOptions extends StyleConfig {
    * @default body
    */
   container?: HTMLElement | undefined;
+  /**
+   * 错行展示支持，设置interval即可
+   * @default repeat
+   */
   mode?: 'repeat' | 'interval';
 }
