@@ -1,3 +1,7 @@
+export type AnyObj = {
+  [key: string]: any;
+}
+
 export interface StyleConfig {
   /**
    * 单个水印区域宽度
@@ -55,4 +59,5 @@ export interface WatermarkOptions extends StyleConfig {
    * @default body
    */
   container?: HTMLElement | undefined;
+  mode?: 'repeat' | 'interval';
 }
