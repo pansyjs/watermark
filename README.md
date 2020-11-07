@@ -69,6 +69,10 @@ waterMark.render();
 | fontFamily    | 规定字体系列      | `string`      | `sans-serif`    | --   |
 | textAlign    | 文本对齐设置      | `string`      | `center`    | --   |
 
+## ❤️ 感谢
+
+- [watermark-dom](https://github.com/saucxs/watermark-dom)
+
 
 ## 🌟 社区互助
 
