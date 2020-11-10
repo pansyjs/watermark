@@ -79,7 +79,6 @@ class Watermark {
 
     const styles: AnyObj = {
       ...this.style,
-      height: height > 0 ? `${height}px` : undefined,
     };
 
     const background = getDrawPattern(this.options);
