@@ -76,11 +76,13 @@ class Watermark {
       this.watermarkDom.setAttribute('data-1', this.watermarkId)
     }
 
-
     const styles: AnyObj = {
-      ...this.style,
-      height: height > 0 ? `${height}px` : undefined,
+      ...this.style
     };
+
+    if (typeof height === 'number' && height) {
+      styles.height = `${height}px`;
+    }
 
     const background = getDrawPattern(this.options);
 
@@ -107,13 +109,20 @@ class Watermark {
 
     // 解决滚动区域无水印问题
     let height = 0;
+    let scrollHeight: number = 0;
+    let clientHeight: number = 0;
 
     if (this.options.container) {
       if (this.container.parentNode) {
-        height = Math.max(this.container.parentNode?.['scrollHeight'], this.container.parentNode?.['clientHeight'])
+        scrollHeight = this.container.parentNode?.['scrollHeight'];
+        clientHeight = this.container.parentNode?.['clientHeight'];
       }
     } else {
-      height = Math.max(this.container.scrollHeight, this.container.clientHeight);
+      scrollHeight = this.container.scrollHeight;
+      clientHeight = this.container.clientHeight;
+    }
+    if (scrollHeight && clientHeight && scrollHeight > clientHeight) {
+      height = Math.max(scrollHeight, clientHeight);
     }
 
     // 获取水印DOM
