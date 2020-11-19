@@ -158,14 +158,16 @@ class Watermark {
           // 修改样式则重新生成
           if (
             mutation.type === 'attributes' &&
-            [this.watermarkId, this.watermarkParentId].indexOf(this.getNodeRandomId(mutation.target))) {
+            [this.watermarkId, this.watermarkParentId].includes(this.getNodeRandomId(mutation.target))
+          ) {
             this.render();
             return;
           }
 
           if (
             mutation.removedNodes.length &&
-            [this.watermarkId, this.watermarkParentId].indexOf((this.getNodeRandomId(mutation.removedNodes[0]))) >= 0) {
+            [this.watermarkId, this.watermarkParentId].includes((this.getNodeRandomId(mutation.removedNodes[0])))
+          ) {
             this.render();
             return;
           }
