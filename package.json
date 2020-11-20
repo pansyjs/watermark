@@ -18,11 +18,11 @@
     "release": "walrus release"
   },
   "devDependencies": {
-    "@walrus/cli": "^1.3.4",
-    "@walrus/plugin-release": "^1.9.1",
-    "@walrus/plugin-test": "^1.1.0",
-    "microbundle": "^0.12.4",
-    "typescript": "^4.1.2"
+    "@walrus/cli": "1.3.4",
+    "@walrus/plugin-release": "1.9.1",
+    "@walrus/plugin-test": "1.1.0",
+    "microbundle": "0.12.4",
+    "typescript": "4.1.2"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
