@@ -56,7 +56,7 @@ waterMark.render();
 | ------------ | --------------| ------------------- | ------ | ---- |
 | mode        | 水印是重复排异还是间隔排列      | `repeat` \| `interval`     | `repeat`     |   `1.2.0` |
 | monitor      | 监听水印元素是否被篡改，被修改或者删除等操作，则重新渲染水印 | `boolean`  | `true` | --   |
-| container        | 水印挂载的容器      | `HTMLElement`     | `body`     |    |
+| container        | 水印挂载的容器      | `HTMLElement` \| `sting`     | `body`     |    |
 | text         | 水印文本        | `string` \| `string[]` |  --   | --   |
 | zIndex        | 水印层级      | `number`     | `9999`     |    |
 | width        | 单个水印区域宽度  | `number`           | `160`    | --   |
@@ -72,7 +72,6 @@ waterMark.render();
 ## ❤️ 感谢
 
 - [watermark-dom](https://github.com/saucxs/watermark-dom)
-
 
 ## 🌟 社区互助
 
