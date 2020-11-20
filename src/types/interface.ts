@@ -58,7 +58,7 @@ export interface WatermarkOptions extends StyleConfig {
    * 水印挂载的容器
    * @default body
    */
-  container?: HTMLElement | undefined;
+  container?: HTMLElement | string |undefined;
   /**
    * 错行展示支持，设置interval即可
    * @default repeat

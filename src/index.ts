@@ -99,10 +99,26 @@ class Watermark {
   }
 
   /**
+   * 获取水印挂载节点
+   * @param container
+   */
+  __getContainer = (container: WatermarkOptions['container']): HTMLElement  => {
+    let dom: HTMLElement | undefined;
+
+    if (typeof container === 'string') {
+      dom = document.getElementById(container) as HTMLElement;
+      !dom && new Error(`水印挂载节点未找到，请检查#${container}是否存在`);
+      return dom;
+    }
+
+    return container || document.body
+  }
+
+  /**
    * 绘制水印
    */
   render() {
-    this.container = this.options.container || document.body;
+    this.container = this.__getContainer(this.options.container);
     const MutationObserver = getMutationObserver();
 
     this.mutationObserver?.disconnect();
