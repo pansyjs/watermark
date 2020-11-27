@@ -70,7 +70,7 @@ class Watermark {
     }
   }
 
-  getWatermarkDom = (height: number) => {
+  _getWatermarkDom = (height: number) => {
     if (!this.watermarkDom) {
       this.watermarkDom = document.createElement('div');
       this.watermarkDom.setAttribute('data-1', this.watermarkId)
@@ -93,6 +93,11 @@ class Watermark {
       styles.backgroundRepeat = 'repeat, repeat';
       styles.backgroundPosition = `${this.options.width / 2}px ${this.options.height / 2}px, 0 0`;
     }
+    // 直接挂载在到body
+    if (!this.options.container) {
+      styles.position = 'fixed';
+      styles.height = undefined;
+    }
     this.watermarkDom.setAttribute('style', getStyleStr(styles));
 
     return this.watermarkDom;
@@ -102,7 +107,7 @@ class Watermark {
    * 获取水印挂载节点
    * @param container
    */
-  __getContainer = (container: WatermarkOptions['container']): HTMLElement  => {
+  _getContainer = (container: WatermarkOptions['container']): HTMLElement  => {
     let dom: HTMLElement | undefined;
 
     if (typeof container === 'string') {
@@ -118,7 +123,7 @@ class Watermark {
    * 绘制水印
    */
   render() {
-    this.container = this.__getContainer(this.options.container);
+    this.container = this._getContainer(this.options.container);
     const MutationObserver = getMutationObserver();
 
     this.mutationObserver?.disconnect();
@@ -142,7 +147,7 @@ class Watermark {
     }
 
     // 获取水印DOM
-    const watermaskDom = this.getWatermarkDom(height);
+    const watermaskDom = this._getWatermarkDom(height);
 
     // 删除已有水印
     if (this.watermarkParentDom) {
