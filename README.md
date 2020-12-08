@@ -72,7 +72,7 @@ waterMark.render();
 **注意**
 
 - `body` 使用 `position: fixed`
-- 其他采用 `position: fixed`, 需保证挂载节点的不能为 `position: static`
+- 其他采用 `position: absolute`, 需保证挂载节点的不能为 `position: static`
 
 ## ❤️ 感谢
 
