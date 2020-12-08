@@ -69,6 +69,11 @@ waterMark.render();
 | fontFamily    | 规定字体系列      | `string`      | `sans-serif`    | --   |
 | textAlign    | 文本对齐设置      | `string`      | `center`    | --   |
 
+**注意**
+
+- `body` 使用 `position: fixed`
+- 其他采用 `position: fixed`, 需保证挂载节点的不能为 `position: static`
+
 ## ❤️ 感谢
 
 - [watermark-dom](https://github.com/saucxs/watermark-dom)
