@@ -1,6 +1,6 @@
 {
   "name": "@pansy/watermark",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "main": "dist/watermark.js",
   "module": "dist/watermark.module.js",
   "source": "src/index.ts",
