@@ -12,8 +12,8 @@
     "dist"
   ],
   "scripts": {
-    "start": "microbundle watch --format es,cjs,umd",
-    "build": "microbundle --format es,cjs,umd",
+    "start": "microbundle watch",
+    "build": "microbundle",
     "test": "walrus test",
     "release": "walrus release"
   },
