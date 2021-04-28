@@ -1,6 +1,6 @@
+import React from 'react';
 import ProCard from '@ant-design/pro-card';
 import { Button, message } from 'antd';
-import isNaN from 'lodash/isNaN';
 import ProForm, {
   ProFormDependency,
   ProFormColorPicker,
@@ -22,15 +22,7 @@ export default () => {
   const handleCopy = () => {
     form.validateFields()
       .then((values) => {
-        const config = Object.keys(values)
-          .reduce((prev, current, index, list) => {
-            const val = isNaN(+values[current]) ? `'${values[current]}'` : +values[current];
-            if (list.length - 1 === index) {
-              return prev + `  ${current}: ${val}\n}`;
-            }
-            return prev + `  ${current}: ${val}\n`;
-          }, '{\n')
-        copy(config);
+        copy(JSON.stringify(values));
         message.success('拷贝成功');
       })
   }
@@ -47,7 +39,7 @@ export default () => {
           opacity: 0.15,
           width: 120,
           height: 64,
-          monitor: true,
+          monitor: false,
           mode: 'interval',
           fontWeight: 300,
           gapX: 100,
@@ -76,15 +68,15 @@ export default () => {
               ]}
             >
               {(config) => {
-                console.log(config);
-                const text = config.text.split('\n');
+                const text: string[] = config.text.split('\n');
                 return (
-                  // @ts-ignore
                   <Watermark
                     {...config}
                     text={text}
                     height={+config.height}
                     width={+config.width}
+                    gapX={+config.gapX}
+                    gapY={+config.gapY}
                   >
                     <WatermarkContent />
                   </Watermark>
@@ -112,7 +104,7 @@ export default () => {
                 ]}
               />
               <ProFormSwitch name="monitor" label="开启保护模式" />
-              <ProFormTextArea label="水印文案" name="text" placeholder="请输入水印文案，换行表示多行，建议不要超过两行" />
+              <ProFormTextArea label="水印文案" help="换行表示多行，建议不要超过两行" name="text" />
               <ProFormText label="水印图片" name="image" placeholder="请输入图片链接" />
               <ProForm.Group>
                 <ProFormText width="xs" label="水印宽度" name="width" />

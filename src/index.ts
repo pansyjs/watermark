@@ -6,8 +6,8 @@ import {
   getContent,
   getMutationObserver,
 }  from './utils';
-import { defaultOptions, attributeName, observeOptions } from './config';
-import type { WatermarkConfig } from './types';
+import { defaultConfig, attributeName, observeOptions } from './config';
+import { WatermarkConfig } from './types';
 
 const MutationObserver = getMutationObserver();
 
@@ -22,7 +22,7 @@ class Watermark {
   private style: Record<string, any>
 
   constructor(options: WatermarkConfig) {
-    this.options = Object.assign({}, defaultOptions, options);
+    this.options = Object.assign({}, defaultConfig, options);
     this.style = {
       position: 'absolute',
       left: 0,
@@ -58,7 +58,6 @@ class Watermark {
   async render() {
     // 获取水印挂载节点
     this.container = getContainer(this.options.container, this.watermarkId);
-    console.log(this.watermarkContent);
     // 获取水印父节点
     if (!this.watermarkContent) {
       this.watermarkContent = getContent();
@@ -68,7 +67,7 @@ class Watermark {
     this._destroyMutationObserver();
 
     // 解决滚动区域无水印问题
-    let height = this._getWatermarkHeight();
+    const height = this._getWatermarkHeight();
     // 获取水印DOM
     const watermaskDom = await this._getWatermarkDom(height);
     watermaskDom.setAttribute(attributeName, this.watermarkId)
@@ -113,7 +112,9 @@ class Watermark {
    * 销毁水印
    */
   destroy() {
+    console.log(`destroy`);
     this.container = undefined;
+    this.shadowRoot = undefined;
     this.watermarkContent = undefined;
 
     this.watermarkDom?.remove();
@@ -161,7 +162,7 @@ class Watermark {
    * 获取水印节点
    * @param height
    */
-  _getWatermarkDom = async (height: number) => {
+  _getWatermarkDom = async (watermarkHeight: number) => {
     if (!this.watermarkDom) {
       this.watermarkDom = document.createElement('div');
     }
@@ -170,8 +171,8 @@ class Watermark {
       ...this.style
     };
 
-    if (typeof height === 'number' && height) {
-      styles.height = `${height}px`;
+    if (typeof watermarkHeight === 'number' && watermarkHeight) {
+      styles.height = `${watermarkHeight}px`;
     }
 
     const backgroundConfig = await getDrawPattern(this.options);
@@ -180,7 +181,7 @@ class Watermark {
       const background = backgroundConfig.url;
 
       if (this.options.mode === 'repeat') {
-        styles.backgroundImage = `url(${background})`
+        styles.backgroundImage = `url(${background})`;
       } else {
         styles.backgroundImage = `url(${background}), url(${background})`;
         styles.backgroundRepeat = 'repeat, repeat';
@@ -215,4 +216,4 @@ class Watermark {
 }
 
 export default Watermark;
-export type { WatermarkConfig } from './types';
+export { WatermarkConfig } from './types';

@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
-import Watermark, { WatermarkOptions } from '@pansy/watermark';
+import Watermark, { WatermarkConfig } from '@pansy/watermark';
 
-interface WatermarkProps extends WatermarkOptions {
+interface WatermarkProps extends WatermarkConfig {
   className?: string;
   style?: React.CSSProperties;
   isBody?: boolean;
@@ -17,19 +17,23 @@ const WatermarkPro: React.FC<WatermarkProps> = ({
   const container = useRef<HTMLDivElement>(null);
   const watermark = useRef<Watermark>();
 
+  useEffect(
+    () => {
+      return () => {
+        watermark.current?.destroy();
+      }
+    },
+    []
+  );
+
   useEffect(() => {
     if (!watermark.current) {
-      // @ts-ignore
       watermark.current = new Watermark({
         ...rest,
         container: !isBody ? container.current : undefined
       });
     } else {
       watermark.current.update(rest);
-    }
-
-    return () => {
-      watermark.current?.destroy();
     }
   }, [rest]);
 

@@ -1,9 +1,7 @@
 /// <reference path="../types/global.d.ts" />
 
 import { attributeName } from '../config';
-import type { WatermarkConfig } from '../types'
-
-export { default as getDrawPattern } from './get-draw-pattern';
+import { WatermarkConfig, DrawPatternResult } from '../types'
 
 /**
  * 获取 MutationObserver 对象
@@ -78,22 +76,108 @@ export const getContent = () => {
   return dom;
 }
 
+export function getDrawPattern(config: WatermarkConfig): Promise<DrawPatternResult> {
+  const {
+    text,
+    gapX,
+    gapY,
+    offsetTop,
+    offsetLeft,
+    width,
+    height,
+    rotate,
+    opacity,
+    fontSize,
+    fontStyle,
+    fontVariant,
+    fontWeight,
+    fontFamily,
+    fontColor,
+    textAlign,
+    image,
+  } = config as Required<WatermarkConfig>;
+  return new Promise((resolve, reject) => {
+    const canvas = document.createElement('canvas');
 
-/**
- * 返回当前显示设备的物理像素分辨率与CSS像素分辨率之比
- */
- export const getPixelRatio = (context: any) => {
-  if (!context) {
-    return 1;
-  }
-  const backingStore =
-    context.backingStorePixelRatio ||
-    context.webkitBackingStorePixelRatio ||
-    context.mozBackingStorePixelRatio ||
-    context.msBackingStorePixelRatio ||
-    context.oBackingStorePixelRatio ||
-    context.backingStorePixelRatio ||
-    1;
+    const ctx = canvas.getContext('2d');
+    const ratio = 1;
 
-  return (window.devicePixelRatio || 1) / backingStore;
-};
+    const canvasWidth = (Number(gapX) + Number(width)) * ratio;
+    const canvasHeight = (Number(gapY) + Number(height)) * ratio;
+    const canvasOffsetLeft = Number(offsetLeft) || Number(gapX) / 2;
+    const canvasOffsetTop = Number(offsetTop) || Number(gapY) / 2;
+
+    canvas.setAttribute('width', `${canvasWidth}px`);
+    canvas.setAttribute('height', `${canvasHeight}px`);
+
+    if (ctx) {
+      const markWidth = width * ratio;
+      const markHeight = height * ratio;
+
+      // 设置透明度
+      ctx.globalAlpha = opacity;
+
+      ctx.translate(canvasOffsetLeft * ratio, canvasOffsetTop * ratio);
+      ctx.rotate((Math.PI / 180) * Number(rotate));
+
+      // 优先使用图片
+      if (image) {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.referrerPolicy = 'no-referrer';
+        img.src = image;
+        img.onload = () => {
+          ctx.drawImage(img, 0, 0, markWidth, markHeight);
+          resolve({
+            url: ctx.canvas.toDataURL(),
+            width: canvasWidth,
+            height: canvasHeight,
+          });
+        };
+        return;
+      }
+
+      // 获取文本的最大宽度
+      const texts = Array.isArray(text) ? text : [text];
+      const widths = texts.map(item => ctx.measureText(item).width);
+      const maxWidth = Math.max(...widths);
+
+      const markSize = Number(fontSize) * ratio;
+
+      // 设置文本对齐方式
+      ctx.textAlign = textAlign;
+      // 设置字体颜色
+      ctx.fillStyle = fontColor;
+      // 设置字体
+      ctx.font = getFont(`${markSize}px`);
+
+      // 文案宽度大于画板宽度
+      if (maxWidth > width) {
+        ctx.font = getFont(`${markSize / 2}px`);
+      }
+
+      // 获取行高
+      const lineHeight = markSize + 5;
+
+      // 计算水印在y轴上的初始位置
+      let initY = (markHeight - (fontSize * texts.length + (texts.length - 1) * 5)) / 2;
+      initY = initY < 0 ? 0 : initY;
+
+      for (let i = 0; i < texts.length; i ++) {
+        ctx.fillText(texts[i], markWidth / 2, initY + (lineHeight * i));
+      }
+
+      resolve({
+        url: ctx.canvas.toDataURL(),
+        width: canvasWidth,
+        height: canvasHeight,
+      });
+    }
+
+    function getFont(fontSize: string) {
+      return `${fontStyle} ${fontVariant} ${fontWeight} ${fontSize} ${fontFamily}`
+    }
+
+    return reject();
+  });
+}

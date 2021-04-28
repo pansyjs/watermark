@@ -1,15 +1,17 @@
 import { Watermark, WatermarkContent } from '../../components';
 
 export default () => {
+  const config = {
+    gapX: 200,
+    gapY: 200,
+    width: 120,
+    height: 32,
+    opacity: 1,
+    image: 'https://gw.alipayobjects.com/zos/bmw-prod/59a18171-ae17-4fc5-93a0-2645f64a3aca.svg'
+  };
+
   return (
-    <Watermark
-      gapX={100}
-      gapY={100}
-      height={32}
-      width={120}
-      opacity={1}
-      image="https://gw.alipayobjects.com/zos/bmw-prod/59a18171-ae17-4fc5-93a0-2645f64a3aca.svg"
-    >
+    <Watermark {...config}>
       <WatermarkContent />
     </Watermark>
   )

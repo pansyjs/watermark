@@ -1,43 +1,55 @@
 export interface StyleConfig {
   /** 水印之间的水平间距 */
-  gapX?: number;
+  gapX: number;
   /** 水印之间的垂直间距 */
-  gapY?: number;
+  gapY: number;
   /** 水印在 canvas 画布上绘制的水平偏移量 */
-  offsetLeft?: number;
+  offsetLeft: number;
   /** 水印在 canvas 画布上绘制的垂直偏移量 */
-  offsetTop?: number;
+  offsetTop: number;
   /** 单个水印宽度 */
-  width?: number;
+  width: number;
   /** 单个水印高度 */
-  height?: number;
+  height: number;
   /** 水印透明度 */
-  opacity?: number;
+  opacity: number;
   /** 旋转的角度 */
-  rotate?: number;
+  rotate: number;
   /** 设置字体大小 */
-  fontSize?: number;
+  fontSize: number;
   /** 设置字体粗细 */
-  fontWeight?: string | number;
+  fontWeight: string | number;
+  /** 规定字体样式 */
+  fontStyle: 'normal' | 'italic' | 'oblique';
+  /** 规定字体变体 */
+  fontVariant: 'normal' | 'small-caps';
   /** 设置字体颜色 */
-  fontColor?: string;
+  fontColor: string;
   /** 设置水印文字的字体 */
-  fontFamily?: string;
+  fontFamily: string;
   /** 水印文字的对齐方式 */
-  textAlign?: CanvasTextDrawingStyles['textAlign'];
+  textAlign: CanvasTextDrawingStyles['textAlign'];
+  /** 绘制文本的文本基线 */
+  textBaseline: CanvasTextDrawingStyles['textBaseline'];
 }
 
-export interface WatermarkConfig extends StyleConfig {
+export interface WatermarkConfig extends Partial<StyleConfig> {
   /** 是否开启监视模式 */
   monitor?: boolean;
   /** 图片源，建议导出 2 倍或 3 倍图，优先使用图片渲染水印 */
   image?: string;
   /** 水印文本, 为数组时表示多行水印 */
-  text: string | string[];
+  text?: string | string[];
   /** 样式层级 */
   zIndex?: number;
   /** 水印挂载的容器 */
   container?: HTMLElement | string;
   /** 展示模式，interval表示错行展示 */
   mode?: 'repeat' | 'interval';
+}
+
+export interface DrawPatternResult {
+  url: string;
+  width: number;
+  height: number;
 }
