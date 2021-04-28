@@ -14,6 +14,7 @@
   "scripts": {
     "start": "dumi dev",
     "build": "wb",
+    "site": "dumi build",
     "test": "walrus test",
     "commit": "commit",
     "release": "walrus release"
