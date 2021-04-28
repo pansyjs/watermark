@@ -63,9 +63,7 @@ export const getContainer = (
 
   dom.setAttribute(attributeName, watermarkId);
   dom.setAttribute('style', getStyleStr({
-    position: 'relative',
-    // width: '100%',
-    // height: '100%',
+    position: 'relative'
   }));
 
   return dom;
@@ -96,5 +94,6 @@ export const getContent = () => {
     context.oBackingStorePixelRatio ||
     context.backingStorePixelRatio ||
     1;
+
   return (window.devicePixelRatio || 1) / backingStore;
 };

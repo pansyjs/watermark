@@ -2,7 +2,6 @@
 title: 基本示例
 nav:
   title: 示例
-order: 100
 ---
 
 # 基本示例

@@ -55,9 +55,10 @@ class Watermark {
     this.render();
   }
 
-  render() {
+  async render() {
     // 获取水印挂载节点
     this.container = getContainer(this.options.container, this.watermarkId);
+    console.log(this.watermarkContent);
     // 获取水印父节点
     if (!this.watermarkContent) {
       this.watermarkContent = getContent();
@@ -69,7 +70,7 @@ class Watermark {
     // 解决滚动区域无水印问题
     let height = this._getWatermarkHeight();
     // 获取水印DOM
-    const watermaskDom = this._getWatermarkDom(height);
+    const watermaskDom = await this._getWatermarkDom(height);
     watermaskDom.setAttribute(attributeName, this.watermarkId)
 
     // 删除已有水印
@@ -160,7 +161,7 @@ class Watermark {
    * 获取水印节点
    * @param height
    */
-  _getWatermarkDom = (height: number) => {
+  _getWatermarkDom = async (height: number) => {
     if (!this.watermarkDom) {
       this.watermarkDom = document.createElement('div');
     }
@@ -173,25 +174,25 @@ class Watermark {
       styles.height = `${height}px`;
     }
 
-    const backgroundConfig = getDrawPattern(this.options);
+    const backgroundConfig = await getDrawPattern(this.options);
 
-    // 优先使用配置的图片
-    const background = backgroundConfig.url;
+    if (backgroundConfig?.url) {
+      const background = backgroundConfig.url;
 
-    if (this.options.mode === 'repeat') {
-      styles.backgroundImage = `url(${background})`
-    } else {
-      styles.backgroundImage = `url(${background}), url(${background})`;
-      styles.backgroundRepeat = 'repeat, repeat';
-      // @ts-ignore
-      styles.backgroundPosition = `${backgroundConfig.width / 2}px ${backgroundConfig.height / 2}px, 0 0`;
+      if (this.options.mode === 'repeat') {
+        styles.backgroundImage = `url(${background})`
+      } else {
+        styles.backgroundImage = `url(${background}), url(${background})`;
+        styles.backgroundRepeat = 'repeat, repeat';
+        styles.backgroundPosition = `${backgroundConfig.width / 2}px ${backgroundConfig.height / 2}px, 0 0`;
+      }
+      // 直接挂载在到body
+      if (!this.options.container) {
+        styles.position = 'fixed';
+        styles.height = undefined;
+      }
+      this.watermarkDom.setAttribute('style', getStyleStr(styles));
     }
-    // 直接挂载在到body
-    if (!this.options.container) {
-      styles.position = 'fixed';
-      styles.height = undefined;
-    }
-    this.watermarkDom.setAttribute('style', getStyleStr(styles));
 
     return this.watermarkDom;
   }
