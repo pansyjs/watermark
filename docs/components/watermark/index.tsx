@@ -35,7 +35,7 @@ const WatermarkPro: React.FC<WatermarkProps> = ({
     } else {
       watermark.current.update(rest);
     }
-  }, [rest]);
+  }, [JSON.stringify(rest)]);
 
   return (
     <div ref={container} className={className} style={style}>

@@ -112,12 +112,10 @@ class Watermark {
    * 销毁水印
    */
   destroy() {
-    console.log(`destroy`);
-    this.container = undefined;
     this.shadowRoot = undefined;
-    this.watermarkContent = undefined;
-
+    this.watermarkContent?.remove();
     this.watermarkDom?.remove();
+
     this._destroyMutationObserver();
   }
 

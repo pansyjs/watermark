@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import ProCard from '@ant-design/pro-card';
 import {
   Button,
@@ -12,10 +12,11 @@ import {
   Col,
   Slider
 } from 'antd';
+import { WatermarkConfig } from '@pansy/watermark';
 import { ProFormColorPicker } from '@ant-design/pro-form';
 import { useClipboard } from "use-clipboard-hook";
-import { Watermark, WatermarkContent } from '../';
-import { WatermarkConfig } from '@pansy/watermark';
+import Watermark from '../watermark';
+import WatermarkContent from '../content';
 import { defaultConfig } from '../../../src/config';
 // @ts-ignore
 import styles from './index.less';
@@ -42,13 +43,22 @@ export default () => {
     message.success('拷贝成功');
   }
 
+  const watermark = useMemo(
+    () => {
+      return (
+        <Watermark {...config}>
+          <WatermarkContent />
+        </Watermark>
+      )
+    },
+    [config]
+  );
+
   return (
     <div className={styles.main}>
       <ProCard split="vertical" headerBordered bordered>
         <ProCard colSpan="70%">
-          <Watermark {...config}>
-            <WatermarkContent />
-          </Watermark>
+          {watermark}
         </ProCard>
         <ProCard
           title="配置面板"
