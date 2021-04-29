@@ -53,5 +53,3 @@ export interface DrawPatternResult {
   width: number;
   height: number;
 }
-
-export {};

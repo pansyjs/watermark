@@ -4,7 +4,7 @@ order: 10
 sidebar: false
 hero:
   title: Watermark
-  desc: 强大的水印组件，助你快速的给网页添加水印。
+  desc: 强大的水印组件，助你快速的给网页添加水印功能。
   actions:
     - text: 快速开始 →
       link: /docs/getting-started
@@ -12,7 +12,7 @@ hero:
 features:
   - icon: https://gw.alipayobjects.com/os/q/cms/images/k9ziitmp/13668549-b393-42a2-97c3-a6365ba87ac2_w96_h96.png
     title: 简单易用
-    desc: 极简的API,快速的给网站添加水印
+    desc: 极简的API
   - icon: https://gw.alipayobjects.com/os/q/cms/images/k9ziieuq/decadf3f-b53a-4c48-83f3-a2faaccf9ff7_w96_h96.png
     title: 通用性
     desc: 提供常用的示例
