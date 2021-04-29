@@ -20,7 +20,7 @@ export interface StyleConfig {
   /** 设置字体粗细 */
   fontWeight: string | number;
   /** 规定字体样式 */
-  fontStyle: 'normal' | 'italic' | 'oblique';
+  fontStyle: 'normal' | 'italic';
   /** 规定字体变体 */
   fontVariant: 'normal' | 'small-caps';
   /** 设置字体颜色 */
