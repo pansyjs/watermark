@@ -4,7 +4,7 @@ order: 10
 sidebar: false
 hero:
   title: Watermark
-  desc: 强大的水印组件，帮你保护。
+  desc: 强大的水印组件，助你快速的给网页添加水印。
   actions:
     - text: 快速开始 →
       link: /docs/getting-started
