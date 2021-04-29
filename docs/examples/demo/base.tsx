@@ -1,3 +1,4 @@
+import React from 'react';
 import { Watermark, WatermarkContent } from '../../components';
 
 export default () => {

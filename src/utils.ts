@@ -1,7 +1,7 @@
-/// <reference path="../types/global.d.ts" />
+/// <reference path="./global.d.ts" />
 
-import { attributeName } from '../config';
-import { WatermarkConfig, DrawPatternResult } from '../types'
+import { attributeName } from './config';
+import { WatermarkConfig, DrawPatternResult } from './types'
 
 /**
  * 获取 MutationObserver 对象

@@ -1,4 +1,4 @@
-import { WatermarkConfig, StyleConfig } from '../types';
+import { WatermarkConfig, StyleConfig } from './types';
 
 export const defaultStyleConfig: StyleConfig = {
   gapX: 100,
