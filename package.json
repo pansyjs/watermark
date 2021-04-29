@@ -20,7 +20,7 @@
     "release": "walrus release"
   },
   "devDependencies": {
-    "@ant-design/pro-card": "1.11.11",
+    "@ant-design/pro-card": "1.11.12",
     "@ant-design/pro-form": "1.21.5",
     "@types/react": "17.0.4",
     "@types/react-dom": "17.0.3",
