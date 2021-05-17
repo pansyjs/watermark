@@ -30,7 +30,7 @@
     "@walrus/commit": "1.2.1",
     "@walrus/plugin-release": "1.12.1",
     "@walrus/plugin-test": "1.1.0",
-    "father-build": "1.19.4",
+    "father-build": "1.19.5",
     "antd": "4.15.5",
     "dumi": "1.1.17",
     "react": "17.0.2",
