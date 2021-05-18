@@ -31,7 +31,7 @@
     "@walrus/plugin-release": "1.12.1",
     "@walrus/plugin-test": "1.1.0",
     "father-build": "1.19.5",
-    "antd": "4.15.5",
+    "antd": "4.15.6",
     "dumi": "1.1.17",
     "react": "17.0.2",
     "react-dom": "17.0.2",
