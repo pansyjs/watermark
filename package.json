@@ -32,7 +32,7 @@
     "@walrus/plugin-test": "1.1.0",
     "father-build": "1.19.5",
     "antd": "4.15.6",
-    "dumi": "1.1.17",
+    "dumi": "1.1.18",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "typescript": "4.2.4",
