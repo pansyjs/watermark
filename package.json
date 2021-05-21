@@ -1,7 +1,6 @@
 {
   "name": "@pansy/root",
   "private": true,
-  "version": "2.0.0",
   "repository": "git@github.com:pansyjs/watermark.git",
   "author": "wangxingkang <156148958@qq.com>",
   "license": "MIT",
@@ -9,7 +8,6 @@
     "start": "dumi dev",
     "site": "dumi build",
     "build": "father-build",
-    "build:type": "tsc",
     "test": "walrus test",
     "commit": "commit",
     "release": "walrus release"
