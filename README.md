@@ -47,7 +47,7 @@ import WaterMark from '@pansy/watermark';
 
 const waterMark = new WaterMark({ ... });
 
-// 如果需求修改水印参数，请调用
+// 如果需要修改水印参数，请调用
 waterMark.update({ ... });
 ```
 
