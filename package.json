@@ -1,15 +1,10 @@
 {
-  "name": "@pansy/watermark",
+  "name": "@pansy/root",
+  "private": true,
   "version": "2.0.0",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
   "repository": "git@github.com:pansyjs/watermark.git",
   "author": "wangxingkang <156148958@qq.com>",
   "license": "MIT",
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "start": "dumi dev",
     "site": "dumi build",
@@ -30,16 +25,16 @@
     "@walrus/commit": "1.2.1",
     "@walrus/plugin-release": "1.12.1",
     "@walrus/plugin-test": "1.1.0",
-    "father-build": "1.19.5",
     "antd": "4.15.6",
     "dumi": "1.1.18",
+    "father-build": "1.19.5",
+    "lerna": "4.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "typescript": "4.2.4",
     "use-clipboard-hook": "1.1.1"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org",
-    "access": "public"
-  }
+  "workspaces": [
+    "packages/*"
+  ]
 }

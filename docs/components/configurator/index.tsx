@@ -17,7 +17,7 @@ import {
 import { WatermarkConfig } from '@pansy/watermark';
 import { ProFormColorPicker } from '@ant-design/pro-form';
 import { useClipboard } from "use-clipboard-hook";
-import Watermark from '../watermark';
+import Watermark from '@pansy/react-watermark';
 import WatermarkContent from '../content';
 import { defaultConfig } from '../../../src/config';
 // @ts-ignore

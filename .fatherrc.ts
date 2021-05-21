@@ -3,5 +3,6 @@ export default {
     type: 'rollup',
     importLibToEs: true
   },
-  cjs: 'rollup'
+  cjs: 'rollup',
+  pkgs: ['watermark', 'react-watermark']
 };

@@ -12,16 +12,13 @@
     "noUnusedLocals": true,
     "experimentalDecorators": true,
     "strict": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "skipLibCheck": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "outDir": "dist",
     "declaration": true
   },
-  "include": [
-    "src"
-  ],
   "exclude": [
     "node_modules",
     "dist",

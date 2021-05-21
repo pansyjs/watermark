@@ -1,0 +1,17 @@
+{
+  "name": "@pansy/watermark",
+  "version": "2.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "repository": "git@github.com:pansyjs/watermark.git",
+  "author": "wangxingkang <156148958@qq.com>",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  }
+}

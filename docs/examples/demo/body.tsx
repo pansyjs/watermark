@@ -1,10 +1,21 @@
-import React from 'react';
-import { Watermark } from '../../components';
+import { useEffect, useRef } from 'react';
+import Watermark from '@pansy/watermark';
 
 export default () => {
-  return (
-    <div>
-      <Watermark isBody text={'测试测试'} />
-    </div>
-  )
+  const watermark = useRef<Watermark>();
+
+  useEffect(
+    () => {
+      watermark.current = new Watermark({
+        text: '测试测试',
+      });
+
+      return () => {
+        watermark.current && watermark.current.destroy();
+      }
+    },
+    []
+  );
+
+  return null;
 }

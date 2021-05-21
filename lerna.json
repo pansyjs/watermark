@@ -1,0 +1,16 @@
+{
+  "npmClient": "yarn",
+  "version": "independent",
+  "useWorkspaces": true,
+  "packages": [
+    "packages/*"
+  ],
+  "command": {
+    "publish": {
+      "npmClient": "npm",
+      "verifyAccess": false,
+      "ignoreChanges": ["*.md", "**/test/**"],
+      "message": "chore(release): publish"
+    }
+  }
+}
