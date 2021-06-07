@@ -25,7 +25,7 @@
     "@walrus/plugin-test": "1.1.0",
     "antd": "4.16.0",
     "dumi": "1.1.19",
-    "father-build": "1.19.5",
+    "father-build": "1.19.6",
     "lerna": "4.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
