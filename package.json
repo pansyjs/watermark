@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@ant-design/pro-card": "1.13.0",
-    "@ant-design/pro-form": "1.26.0",
+    "@ant-design/pro-form": "1.27.1",
     "@types/react": "17.0.8",
     "@types/react-dom": "17.0.5",
     "@umijs/plugin-antd": "0.9.2",
