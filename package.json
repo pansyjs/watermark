@@ -15,7 +15,7 @@
   "devDependencies": {
     "@ant-design/pro-card": "1.14.0",
     "@ant-design/pro-form": "1.29.1",
-    "@types/react": "17.0.11",
+    "@types/react": "17.0.20",
     "@types/react-dom": "17.0.8",
     "@umijs/plugin-antd": "0.10.0",
     "@walrus/build": "0.5.3",
