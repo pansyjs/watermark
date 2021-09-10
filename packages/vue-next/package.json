@@ -7,7 +7,7 @@
     "@pansy/watermark": "^2.0.0"
   },
   "devDependencies": {
-    "vue": "^3.2.11"
+    "vue": "3.2.11"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
