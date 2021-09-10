@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import Watermark, { WatermarkConfig } from '@pansy/watermark';
 
-interface WatermarkProps extends WatermarkConfig {
+export interface WatermarkProps extends WatermarkConfig {
   className?: string;
   style?: React.CSSProperties;
   isBody?: boolean;

@@ -1,6 +1,6 @@
 {
-  "name": "@pansy/react-watermark",
-  "version": "3.0.0",
+  "name": "@pansy/watermark-react",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",

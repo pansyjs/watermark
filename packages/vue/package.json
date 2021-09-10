@@ -1,12 +1,12 @@
 {
-  "name": "@pansy/vue-watermark",
+  "name": "@pansy/watermark-vue",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "peerDependencies": {
-    "vue": "^3.0.0"
+    "vue": "^2"
   },
   "devDependencies": {
-    "vue": "^3.0.11"
+    "vue": "^2.6.14"
   }
 }
