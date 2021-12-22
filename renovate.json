@@ -4,5 +4,6 @@
     ":automergeAll",
     ":automergeBranch",
     ":automergeRequireAllStatusChecks"
-  ]
+  ],
+  "ignoreDeps": ["@types/react", "@types/react-dom"]
 }
