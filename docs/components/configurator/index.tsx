@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import ProCard from '@ant-design/pro-card';
 import {
   Button,
@@ -14,20 +14,19 @@ import {
   Slider,
   Divider
 } from 'antd';
-import { WatermarkConfig } from '@pansy/watermark';
+import { defaultOptions } from '@pansy/watermark';
+import type { WatermarkOptions } from '@pansy/watermark'
 import { ProFormColorPicker } from '@ant-design/pro-form';
 import { useClipboard } from "use-clipboard-hook";
 import Watermark from '@pansy/react-watermark';
 import WatermarkContent from '../content';
-import { defaultConfig } from '../../../src/config';
-// @ts-ignore
 import styles from './index.less';
 
 const { TextArea } = Input;
 
 export default () => {
-  const [config, setConfig] = useState<WatermarkConfig>({
-    ...defaultConfig,
+  const [config, setConfig] = useState<WatermarkOptions>({
+    ...defaultOptions,
     text: '测试水印'
   })
   const { copy } = useClipboard();
@@ -70,7 +69,7 @@ export default () => {
             <Form
               layout="vertical"
               initialValues={{
-                ...defaultConfig,
+                ...defaultOptions,
                 text: '测试水印'
               }}
               form={form}

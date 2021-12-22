@@ -4,24 +4,38 @@ order: 10
 sidebar: false
 hero:
   title: Watermark
-  desc: 强大的水印组件，助你快速的给网页添加水印功能。
+  desc: 强大的水印组件，助你快速的给网页添加水印。
   actions:
     - text: 快速开始 →
       link: /docs/getting-started
 
 features:
-  - icon: https://gw.alipayobjects.com/os/q/cms/images/k9ziitmp/13668549-b393-42a2-97c3-a6365ba87ac2_w96_h96.png
+  - icon: https://gw.alipayobjects.com/mdn/rms_08e378/afts/img/A*43rfS4dD0MUAAAAAAAAAAABkARQnAQ
     title: 简单易用
-    desc: 极简的API
-  - icon: https://gw.alipayobjects.com/os/q/cms/images/k9ziieuq/decadf3f-b53a-4c48-83f3-a2faaccf9ff7_w96_h96.png
-    title: 通用性
-    desc: 提供常用的示例
-  - icon: https://gw.alipayobjects.com/os/q/cms/images/k9zij2bh/67f75d56-0d62-47d6-a8a5-dbd0cb79a401_w96_h96.png
+    desc: 只提供 update 、show、 hide、destroy API。
+  - icon: https://gw.alipayobjects.com/mdn/rms_08e378/afts/img/A*cY0tTr8q3Y4AAAAAAAAAAABkARQnAQ
+    title: 预设配置
+    desc: 支持自定义水印样式，提供基本默认配置
+  - icon: https://gw.alipayobjects.com/zos/basement_prod/464cb990-6db8-4611-89af-7766e208b365/k77899wk_w108_h132.png
+    title: 水印保护
+    desc: 安全防御，防止他人删除水印dom或修改样式属性。
+  - icon: https://gw.alipayobjects.com/zos/basement_prod/a1c647aa-a410-4024-8414-c9837709cb43/k7787itw_w126_h114.png
+    title: 框架可用
+    desc: 针对 react、vue、vue3 提供对应开发包。
+  - icon: https://gw.alipayobjects.com/zos/basement_prod/d078a5a9-1cb3-4352-9f05-505c2e98bc95/k7788v4b_w102_h126.png
+    title: 文案多样性
+    desc: 支持图片、单行文字、多行文字多种形式。
+  - icon: https://gw.alipayobjects.com/zos/antfincdn/Eb8IHpb9jE/Typescript_logo_2020.svg
     title: TypeScript
-    desc: 提供完整的高德类型定义
+    desc: 使用 TypeScript 开发，提供完整的类型定义文件
 
 footer: Open-source MIT Licensed | Copyright © 2020-present
 ---
 
-<div style="height: 150px" />
+## 包看板
+
+| 组件 | 下载量 | 版本 |
+| --- | --- | --- |
+| @pansy/watermark | [![watermark](https://img.shields.io/npm/dw/@pansy/watermark.svg)](https://www.npmjs.com/package/@pansy/watermark) | [![npm package](https://img.shields.io/npm/v/@pansy/watermark.svg?style=flat-square?style=flat-square)](https://www.npmjs.com/package/@pansy/watermark) |
+| @pansy/react-watermark | [![react-watermark](https://img.shields.io/npm/dw/@pansy/react-watermark.svg)](https://www.npmjs.com/package/@pansy/react-watermark) | [![npm package](https://img.shields.io/npm/v/@pansy/react-watermark.svg?style=flat-square?style=flat-square)](https://www.npmjs.com/package/@pansy/react-watermark) |
 

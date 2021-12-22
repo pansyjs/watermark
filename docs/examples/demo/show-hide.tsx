@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Button, Space } from 'antd';
 import WatermarkContent from '../../components/content';
 import { Watermark } from '@pansy/watermark';
 
@@ -19,9 +20,26 @@ export default () => {
     []
   );
 
+  const handleShow = () => {
+    watermark.current && watermark.current.show();
+  }
+
+  const handleHide = () => {
+    watermark.current && watermark.current.hide();
+  }
+
   return (
-    <div id="watermark-01">
-      <WatermarkContent />
+    <div>
+      <Space>
+        <Button onClick={handleShow}>显示</Button>
+
+        <Button onClick={handleHide}>隐藏</Button>
+      </Space>
+
+      <div id="watermark-01">
+        <WatermarkContent />
+      </div>
     </div>
+
   )
 }

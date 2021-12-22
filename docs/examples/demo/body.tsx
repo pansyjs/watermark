@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import Watermark from '@pansy/watermark';
+import { Watermark } from '@pansy/watermark';
 
 export default () => {
   const watermark = useRef<Watermark>();

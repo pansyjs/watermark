@@ -15,7 +15,7 @@ export default {
     },
   ],
   alias: {
-    '@pansy/watermark': join(__dirname, 'src'),
+    '@pansy/watermark': join(__dirname, 'packages/core/src'),
   },
   resolve: {
     includes: [

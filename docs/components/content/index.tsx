@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default () => {
   return (
     <>
@@ -28,10 +26,6 @@ export default () => {
           illo beatae. Magni assumenda eligendi itaque eum voluptate non!
         </p>
       </div>
-      <h4>
-        下面是一张zIndex 为 10 的 position 为 relative 图片，
-        <br /> 如果要在图片中展示水印尝试调大右侧的 zIndex 滑块试试。
-      </h4>
       <img
         src="https://gw.alipayobjects.com/zos/bmw-prod/d283f09a-64d6-4d59-bfc7-37b49ea0da2b.svg"
         alt="示例图片"
