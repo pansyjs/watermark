@@ -1,6 +1,6 @@
 {
   "name": "@pansy/watermark",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "lib/index.js",
   "module": "es/index.esm.js",
   "types": "lib/index.d.ts",
