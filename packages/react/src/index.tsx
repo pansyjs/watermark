@@ -1,9 +1,10 @@
 import React, { useRef, useEffect } from 'react';
-import Watermark, { WatermarkConfig } from '@pansy/watermark';
+import { Watermark as BaseWatermark, WatermarkOptions } from '@pansy/watermark';
 
-export interface WatermarkProps extends WatermarkConfig {
+export interface WatermarkProps extends WatermarkOptions {
   className?: string;
   style?: React.CSSProperties;
+  visable?: boolean;
   isBody?: boolean;
 }
 
@@ -11,11 +12,12 @@ const WatermarkPro: React.FC<WatermarkProps> = ({
   className,
   style,
   isBody,
+  visable = true,
   children,
   ...rest
 }) => {
   const container = useRef<HTMLDivElement>(null);
-  const watermark = useRef<Watermark>();
+  const watermark = useRef<BaseWatermark>();
 
   useEffect(
     () => {
@@ -26,16 +28,29 @@ const WatermarkPro: React.FC<WatermarkProps> = ({
     []
   );
 
+  useEffect(
+    () => {
+      if (visable) {
+        watermark.current?.show();
+      } else {
+        watermark.current?.hide();
+      }
+    },
+    [visable]
+  );
+
   useEffect(() => {
     if (!watermark.current) {
-      watermark.current = new Watermark({
+      watermark.current = new BaseWatermark({
         ...rest,
         container: !isBody ? container.current : undefined
       });
     } else {
       watermark.current.update(rest);
     }
-  }, [JSON.stringify(rest)]);
+  }, [rest]);
+
+  if (isBody) return null;
 
   return (
     <div ref={container} className={className} style={style}>

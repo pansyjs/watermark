@@ -1,11 +1,12 @@
 {
-  "name": "@pansy/watermark-react",
-  "version": "1.0.0",
-  "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "types": "dist/index.d.ts",
+  "name": "@pansy/react-watermark",
+  "version": "3.0.0",
+  "main": "lib/index.js",
+  "module": "es/index.esm.js",
+  "types": "lib/index.d.ts",
   "files": [
-    "dist"
+    "es",
+    "lib"
   ],
   "license": "MIT",
   "peerDependencies": {
