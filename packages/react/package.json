@@ -1,6 +1,6 @@
 {
   "name": "@pansy/react-watermark",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "main": "lib/index.js",
   "module": "es/index.esm.js",
   "types": "lib/index.d.ts",
@@ -14,7 +14,7 @@
     "react-dom": ">=16.9.0"
   },
   "dependencies": {
-    "@pansy/watermark": "^2.0.0"
+    "@pansy/watermark": "2.0.1"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
