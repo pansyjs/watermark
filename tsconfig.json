@@ -1,32 +1,10 @@
 {
+  "extends": "./base-config.json",
   "compilerOptions": {
-    "module": "esnext",
-    "target": "esnext",
-    "sourceMap": false,
-    "baseUrl": ".",
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitReturns": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true,
-    "experimentalDecorators": true,
-    "strict": true,
-    "jsx": "react-jsx",
-    "skipLibCheck": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "outDir": "dist",
-    "declaration": true,
     "paths": {
       "@pansy/watermark": [
         "./packages/core/*"
       ]
     }
-  },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "*.test.ts"
-  ]
+  }
 }

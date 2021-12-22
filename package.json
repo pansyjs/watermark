@@ -7,7 +7,7 @@
   "scripts": {
     "start": "dumi dev",
     "site": "dumi build",
-    "build": "walrus-rollup",
+    "build": "father-build",
     "test": "walrus test",
     "commit": "commit",
     "release": "walrus release"
