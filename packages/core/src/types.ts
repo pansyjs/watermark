@@ -1,4 +1,4 @@
-export interface StyleConfig {
+export interface BaseOptions extends CanvasTextDrawingStyles {
   /** 水印之间的水平间距 */
   gapX: number;
   /** 水印之间的垂直间距 */
@@ -27,13 +27,9 @@ export interface StyleConfig {
   fontColor: string;
   /** 设置水印文字的字体 */
   fontFamily: string;
-  /** 水印文字的对齐方式 */
-  textAlign: CanvasTextDrawingStyles['textAlign'];
-  /** 绘制文本的文本基线 */
-  textBaseline: CanvasTextDrawingStyles['textBaseline'];
 }
 
-export interface WatermarkConfig extends Partial<StyleConfig> {
+export interface WatermarkOptions extends Partial<BaseOptions> {
   /** 是否开启监视模式 */
   monitor?: boolean;
   /** 图片源，建议导出 2 倍或 3 倍图，优先使用图片渲染水印 */

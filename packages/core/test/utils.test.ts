@@ -1,4 +1,4 @@
-import { getStyleStr } from './utils';
+import { getStyleStr } from '../src/utils';
 
 describe('getStyleStr', () => {
   it('空对象', () => {

@@ -1,6 +1,6 @@
-import { WatermarkConfig, StyleConfig } from './types';
+import { WatermarkOptions } from './types';
 
-export const defaultStyleConfig: StyleConfig = {
+export const defaultOptions: Partial<WatermarkOptions> = {
   gapX: 100,
   gapY: 100,
   offsetLeft: 0,
@@ -16,14 +16,7 @@ export const defaultStyleConfig: StyleConfig = {
   fontColor: '#000',
   fontFamily: 'sans-serif',
   textAlign: 'center',
-  textBaseline: 'alphabetic'
-}
-
-/**
- * 水印默认配置
- */
-export const defaultConfig: Partial<WatermarkConfig> = {
-  ...defaultStyleConfig,
+  textBaseline: 'alphabetic',
   monitor: true,
   zIndex: 9999,
   mode: 'interval'

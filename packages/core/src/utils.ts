@@ -1,12 +1,11 @@
-/// <reference path="./global.d.ts" />
-
 import { attributeName } from './config';
-import { WatermarkConfig, DrawPatternResult } from './types'
+import { WatermarkOptions, DrawPatternResult } from './types'
 
 /**
  * 获取 MutationObserver 对象
  */
 export function getMutationObserver(): typeof MutationObserver  {
+  // @ts-ignore
   return window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
 }
 
@@ -45,7 +44,7 @@ export const getRandomId = (prefix = '') => {
  * @returns
  */
 export const getContainer = (
-  container: WatermarkConfig['container'],
+  container: WatermarkOptions['container'],
   watermarkId: string
 ): HTMLElement  => {
   let dom: HTMLElement | null;
@@ -76,7 +75,7 @@ export const getContent = () => {
   return dom;
 }
 
-export function getDrawPattern(config: WatermarkConfig): Promise<DrawPatternResult> {
+export function getDrawPattern(config: WatermarkOptions): Promise<DrawPatternResult> {
   const {
     text,
     gapX,
@@ -95,7 +94,7 @@ export function getDrawPattern(config: WatermarkConfig): Promise<DrawPatternResu
     fontColor,
     textAlign,
     image,
-  } = config as Required<WatermarkConfig>;
+  } = config as Required<WatermarkOptions>;
   return new Promise((resolve, reject) => {
     const canvas = document.createElement('canvas');
 
