@@ -24,7 +24,7 @@
     "@walrus/plugin-test": "1.1.0",
     "@walrus/rollup-cli": "0.4.5",
     "antd": "4.16.13",
-    "dumi": "1.1.26",
+    "dumi": "1.1.37",
     "lerna": "4.0.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
