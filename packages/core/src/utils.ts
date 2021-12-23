@@ -1,4 +1,4 @@
-import { attributeName } from './config';
+import { attributeNameTag } from './config';
 import { WatermarkOptions, DrawPatternResult } from './types'
 
 /**
@@ -7,6 +7,24 @@ import { WatermarkOptions, DrawPatternResult } from './types'
 export function getMutationObserver(): typeof MutationObserver  {
   // @ts-ignore
   return window.MutationObserver || window.WebKitMutationObserver || window.MozMutationObserver;
+}
+
+/**
+ * 获取DataSetKey
+ * @param attributeName
+ * @returns
+ */
+export function getDataSetKey(attributeName: string) {
+  return attributeName
+    .split('-')
+    .slice(1)
+    .reduce((prev, cur, index) => {
+      if (index === 0) {
+        return cur;
+      }
+
+      return `${prev}${cur[0].toUpperCase() + cur.slice(1)}`
+    });
 }
 
 /**
@@ -58,7 +76,7 @@ export const getContainer = (
     dom = container ?? document.body;
   }
 
-  dom.setAttribute(attributeName, watermarkId);
+  dom.setAttribute(attributeNameTag, watermarkId);
   dom.setAttribute('style', getStyleStr({
     position: 'relative'
   }));
@@ -66,11 +84,12 @@ export const getContainer = (
   return dom;
 }
 
-export const getContent = () => {
+export const getContent = (watermarkId: string) => {
   const dom = document.createElement('div');
   dom.setAttribute('style', getStyleStr({
     pointerEvents: 'none'
   }));
+  dom.setAttribute(attributeNameTag, watermarkId);
 
   return dom;
 }

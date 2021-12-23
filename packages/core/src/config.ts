@@ -22,10 +22,11 @@ export const defaultOptions: Partial<WatermarkOptions> = {
   mode: 'interval'
 }
 
-export const attributeName = 'data-watermark';
+/** 用于标记是否需要保护 */
+export const attributeNameTag = 'data-watermark-tag';
 
 export const observeOptions = {
   childList: true,
   subtree: true,
-  attributeFilter: ['style', attributeName]
+  attributeFilter: ['style', attributeNameTag]
 }

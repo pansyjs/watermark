@@ -4,9 +4,14 @@ import {
   getRandomId,
   getContainer,
   getContent,
+  getDataSetKey,
   getMutationObserver,
 }  from './utils';
-import { defaultOptions, attributeName, observeOptions } from './config';
+import {
+  defaultOptions,
+  attributeNameTag,
+  observeOptions,
+} from './config';
 import { WatermarkOptions } from './types';
 
 const MutationObserver = getMutationObserver();
@@ -16,12 +21,14 @@ export class Watermark {
   private options: WatermarkOptions;
   /** 水印挂载容器 */
   private container: HTMLElement | undefined;
+  /** 水印的包含节点 */
+  private watermarkContent: HTMLElement | undefined;
+  /** 水印节点 */
+  private watermarkDom: HTMLElement | undefined;
   /** 水印样式 */
   private style: Record<string, any>;
+  private watermarkTag: string;
   private shadowRoot: ShadowRoot | HTMLElement | undefined;
-  private watermarkContent: HTMLElement | undefined;
-  private watermarkDom: HTMLElement | undefined;
-  private watermarkId: string;
   private mutationObserver: MutationObserver | null;
 
   constructor(options: WatermarkOptions = {}) {
@@ -38,7 +45,7 @@ export class Watermark {
       backgroundRepeat: 'repeat'
     }
     this.style.zIndex = this.options.zIndex;
-    this.watermarkId = getRandomId('watermark');
+    this.watermarkTag = getRandomId('watermark');
     this.mutationObserver = null;
 
     this._render();
@@ -86,8 +93,16 @@ export class Watermark {
    */
   destroy() {
     this.shadowRoot = undefined;
-    this.watermarkContent?.remove();
-    this.watermarkDom?.remove();
+
+    if (this.watermarkContent) {
+      this.watermarkContent.remove();
+      this.watermarkContent = undefined;
+    }
+
+    if (this.watermarkDom) {
+      this.watermarkDom.remove();
+      this.watermarkDom = undefined;
+    }
 
     this._destroyMutationObserver();
   }
@@ -97,26 +112,29 @@ export class Watermark {
    * @param mutation
    */
   _isAgainRender = (mutation: MutationRecord) => {
+    // 修改样式或属性
     if (mutation.type === 'attributes') {
-      if (mutation.attributeName === 'data-watermark') {
+      if (mutation.attributeName === attributeNameTag) {
         return true;
       }
-      if (this.watermarkId === this._getNodeRandomId(mutation.target)) {
+      if (this.watermarkTag === this._getNodeRandomId(mutation.target)) {
         return true;
       }
     }
 
-    if (mutation.removedNodes.length) {
-      if (this.watermarkId === (this._getNodeRandomId(mutation.removedNodes[0]))) {
-        return true;
-      }
+    // 删除节点
+    if (
+      mutation.removedNodes.length &&
+      this.watermarkTag === this._getNodeRandomId(mutation.removedNodes[0])
+    ) {
+      return true;
     }
 
     return false;
   }
 
   _getNodeRandomId = (node: Node) => {
-    return node?.['dataset']?.['watermark'];
+    return node?.['dataset']?.[getDataSetKey(attributeNameTag)];
   }
 
   /**
@@ -183,10 +201,10 @@ export class Watermark {
 
   async _render() {
     // 获取水印挂载节点
-    this.container = getContainer(this.options.container, this.watermarkId);
+    this.container = getContainer(this.options.container, this.watermarkTag);
     // 获取水印父节点
     if (!this.watermarkContent) {
-      this.watermarkContent = getContent();
+      this.watermarkContent = getContent(this.watermarkTag);
       this.container.append(this.watermarkContent);
     }
 
@@ -196,7 +214,7 @@ export class Watermark {
     const height = this._getWatermarkHeight();
     // 获取水印DOM
     const watermaskDom = await this._getWatermarkDom(height);
-    watermaskDom.setAttribute(attributeName, this.watermarkId)
+    watermaskDom.setAttribute(attributeNameTag, this.watermarkTag)
 
     // 删除已有水印
     if (this.watermarkContent) {
@@ -224,6 +242,7 @@ export class Watermark {
       this.mutationObserver = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
           if (this._isAgainRender(mutation)) {
+            this.destroy();
             this._render();
             return;
           }
