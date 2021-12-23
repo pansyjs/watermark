@@ -8,22 +8,14 @@
 
 <div align="center">
   强大的水印组件，助你快速的给网页添加水印。
-</div>
 
-<p align="center">
-  <a href="https://github.com/pansyjs/watermark/network">
-    <img src="https://img.shields.io/github/forks/pansyjs/watermark.svg" alt="Forks">
-  </a>
-  <a href="https://github.com/pansyjs/watermark/stargazers">
-    <img src="https://img.shields.io/github/stars/pansyjs/watermark.svg" alt="Stars">
-  </a>
-  <a href="https://www.npmjs.com/package/@pansy/watermark">
-    <img src="https://img.shields.io/npm/v/@pansy/watermark.svg" alt="npm version">
-  </a>
-  <a href="https://packagephobia.com/result?p=@pansy/watermark">
-    <img src="https://packagephobia.com/badge?p=@pansy/watermark" alt="npm version">
-  </a>
-</p>
+  <br />
+
+  [![npm version][npm-v-image]][npm-url] 
+  [![stars-image][stars-image]][stars-url] 
+  [![forks-image][forks-image]][forks-url] 
+  [![packagephobia][packagephobia-image]][packagephobia-url] 
+</div>
 
 ## ✨ 特性
 
@@ -79,3 +71,14 @@ watermark.destroy();
 | Github Issue                                                 | 钉钉群                                                                                     | 微信群                                                                                   |
 | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------- |
 | [issues](https://github.com/pansyjs/watermark/issues) | <img src="https://github.com/alitajs/alita/blob/master/public/dingding.png" width="100" /> | <img src="https://github.com/alitajs/alita/blob/master/public/wechat.png" width="100" /> |
+
+
+[npm-v-image]: https://img.shields.io/npm/v/@pansy/watermark.svg
+[forks-image]: https://img.shields.io/github/forks/pansyjs/watermark.svg
+[stars-image]: https://img.shields.io/github/stars/pansyjs/watermark.svg
+[packagephobia-image]: https://packagephobia.com/badge?p=@pansy/watermark
+[npm-url]: http://npmjs.org/package/@pansy/watermark
+[github-url]: https://github.com/pansyjs/watermark
+[stars-url]: https://github.com/pansyjs/watermark/stargazers
+[forks-url]: https://github.com/pansyjs/watermark/network/members
+[packagephobia-url]: https://packagephobia.com/result?p=@pansy/watermark
