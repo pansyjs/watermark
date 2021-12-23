@@ -19,14 +19,20 @@ export const Watermark: React.FC<WatermarkProps> = ({
   const container = useRef<HTMLDivElement>(null);
   const watermark = useRef<BaseWatermark>();
 
-  useEffect(
-    () => {
-      return () => {
-        watermark.current?.destroy();
+  useEffect(() => {
+    if (!watermark.current) {
+      watermark.current = new BaseWatermark({
+        ...rest,
+        container: !isBody ? container.current : undefined
+      });
+
+      if (!visable) {
+        watermark.current.hide();
       }
-    },
-    []
-  );
+    } else {
+      watermark.current.update(rest);
+    }
+  }, [rest]);
 
   useEffect(
     () => {
@@ -39,16 +45,14 @@ export const Watermark: React.FC<WatermarkProps> = ({
     [visable]
   );
 
-  useEffect(() => {
-    if (!watermark.current) {
-      watermark.current = new BaseWatermark({
-        ...rest,
-        container: !isBody ? container.current : undefined
-      });
-    } else {
-      watermark.current.update(rest);
-    }
-  }, [rest]);
+  useEffect(
+    () => {
+      return () => {
+        watermark.current?.destroy();
+      }
+    },
+    []
+  );
 
   if (isBody) return null;
 
