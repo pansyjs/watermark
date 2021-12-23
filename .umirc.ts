@@ -19,7 +19,9 @@ export default {
   },
   resolve: {
     includes: [
-      'docs'
+      'docs',
+      'packages/core/docs',
+      'packages/react/docs'
     ]
   },
   hash: true,

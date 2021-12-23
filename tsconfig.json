@@ -1,10 +1,14 @@
 {
   "extends": "./base-config.json",
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "@pansy/watermark": [
         "./packages/core/*"
-      ]
+      ],
+      "@pansy/react-watermark": [
+        "./packages/react/*"
+      ],
     }
   }
 }

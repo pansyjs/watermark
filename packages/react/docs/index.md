@@ -3,11 +3,11 @@ nav:
   title: 组件包
   path: /packages
 group:
-  title: 核心
-  path: /core
+  title: 框架
+  path: /frames
 ---
 
-# @pansy/watermark
+# React
 
 ## 代码示例
 
@@ -37,7 +37,7 @@ group:
 
 |参数|说明|类型|默认值|
 |---|---|---|---|
-|container|水印挂载节点|`HTMLElement` \| `string`|-|
+|visable|水印是否显示|`boolean`|`true`|
 |image|图片源，建议导出 2 倍或 3 倍图，优先使用图片渲染水印|`string`|-|
 |text|水印文本, 为数组时表示多行水印|`string` \| `string[]`|-|
 |zIndex|水印层级|`number`|`9999`|
@@ -62,12 +62,5 @@ group:
 |gapY|水印之间的垂直间距|`number`|`100`|
 |offsetLeft|水印在 canvas 画布上绘制的水平偏移量|`number`|`0`|
 |offsetTop|水印在 canvas 画布上绘制的垂直偏移量|`number`|`0`|
-
-### 方法
-
-|名称|说明|类型|
-|---|---|---|
-|update|更新水印配置，并重新渲染|`(opts: Options) => void`|
-|show|显示水印|`() => void`|
-|hide|隐藏水印|`() => void`|
-|destroy|销毁水印|`() => void`|
+|width|单个水印宽度|`number`|`120`|
+|height|单个水印高度|`number`|`64`|

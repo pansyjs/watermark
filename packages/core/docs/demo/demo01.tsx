@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import WatermarkContent from '../../../../docs/components/content';
+import Content from '../../../../docs/components/content';
 import { Watermark } from '@pansy/watermark';
 
 export default () => {
@@ -21,7 +21,7 @@ export default () => {
 
   return (
     <div id="watermark-01">
-      <WatermarkContent />
+      <Content />
     </div>
   )
 }

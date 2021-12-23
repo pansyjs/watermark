@@ -2,6 +2,13 @@
   "extends": "../../base-config.json",
   "compilerOptions": {
     "jsx": "react",
-    "esModuleInterop": true
+    "declaration": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+      "paths": {
+        "@pansy/react-watermark": [
+          "./src/*"
+        ],
+      }
   }
 }

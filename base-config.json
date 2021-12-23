@@ -3,7 +3,6 @@
     "module": "esnext",
     "target": "esnext",
     "sourceMap": false,
-    "baseUrl": ".",
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
@@ -16,8 +15,7 @@
     "skipLibCheck": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "outDir": "dist",
-    "declaration": true
+    "outDir": "dist"
   },
   "exclude": [
     "node_modules",
