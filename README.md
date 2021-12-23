@@ -1,4 +1,14 @@
-<h1 align="center">@pansy/watermark</h1>
+<p align="center">
+  <a href="https://ant.design">
+    <img width="200" src="https://cdn.jsdelivr.net/gh/wangxingkang/pictures@latest/imgs/20210427184129.svg">
+  </a>
+</p>
+
+<h1 align="center">Pansy Watermark</h1>
+
+<div align="center">
+  强大的水印组件，助你快速的给网页添加水印。
+</div>
 
 <p align="center">
   <a href="https://github.com/pansyjs/watermark/network">
@@ -18,7 +28,7 @@
 ## ✨ 特性
 
 - 🌴 支持一个页面添加多处不同水印
-- 🌵 支持使用图片作为水印
+- 🌵 支持使用图片、单行文本、多行文本作为水印
 - 🐠 支持自定义水印样式，开箱即用
 - 🌈 安全防御 - 防止他人删除水印dom或修改样式属性
 - 💻 使用 TypeScript 编写，提供完善的类型定义
@@ -43,12 +53,21 @@ yarn add @pansy/watermark
 
 ## 🔨 使用
 ```ts
-import WaterMark from '@pansy/watermark';
+import { Watermark } from '@pansy/watermark';
 
-const waterMark = new WaterMark({ ... });
+const watermark = new Watermark({ ... });
 
 // 如果需要修改水印参数，请调用
-waterMark.update({ ... });
+watermark.update({ ... });
+
+// 隐藏水印
+watermark.hide();
+
+// 显示水印
+watermark.hide();
+
+// 销毁水印
+watermark.destroy();
 ```
 
 ## ❤️ 感谢
