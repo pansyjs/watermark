@@ -14,10 +14,11 @@
 
 <div align="center">
 
-  [![npm version][npm-v-image]][npm-url] 
-  [![stars-image][stars-image]][stars-url] 
-  [![forks-image][forks-image]][forks-url] 
-  [![packagephobia][packagephobia-image]][packagephobia-url] 
+[![npm version][npm-v-image]][npm-url] 
+[![npm download][download-image]][download-url] 
+[![stars-image][stars-image]][stars-url] 
+[![forks-image][forks-image]][forks-url] 
+[![packagephobia][packagephobia-image]][packagephobia-url] 
   
 </div> 
 
@@ -86,3 +87,5 @@ watermark.destroy();
 [stars-url]: https://github.com/pansyjs/watermark/stargazers
 [forks-url]: https://github.com/pansyjs/watermark/network/members
 [packagephobia-url]: https://packagephobia.com/result?p=@pansy/watermark
+[download-image]: https://img.shields.io/npm/dm/@pansy/watermark
+[download-url]: https://npmjs.org/package/@pansy/watermark
