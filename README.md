@@ -8,14 +8,16 @@
 
 <div align="center">
   强大的水印组件，助你快速的给网页添加水印。
+</div>
 
-  <br />
+<br />
 
+<div align="center">
   [![npm version][npm-v-image]][npm-url] 
   [![stars-image][stars-image]][stars-url] 
   [![forks-image][forks-image]][forks-url] 
   [![packagephobia][packagephobia-image]][packagephobia-url] 
-</div>
+</div> 
 
 ## ✨ 特性
 
