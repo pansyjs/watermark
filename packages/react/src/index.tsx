@@ -8,7 +8,7 @@ export interface WatermarkProps extends WatermarkOptions {
   isBody?: boolean;
 }
 
-const WatermarkPro: React.FC<WatermarkProps> = ({
+export const Watermark: React.FC<WatermarkProps> = ({
   className,
   style,
   isBody,
@@ -59,4 +59,4 @@ const WatermarkPro: React.FC<WatermarkProps> = ({
   )
 }
 
-export default WatermarkPro;
+export default Watermark;
