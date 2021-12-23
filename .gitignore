@@ -29,3 +29,4 @@ dist
 # Local
 local.config.ts
 yarn.lock
+install-state.gz
