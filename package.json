@@ -15,8 +15,8 @@
   "devDependencies": {
     "@ant-design/pro-card": "1.18.17",
     "@ant-design/pro-form": "1.52.1",
-    "@pansy/watermark": "workspace:packages/core",
     "@pansy/react-watermark": "workspace:packages/react",
+    "@pansy/watermark": "workspace:packages/core",
     "@types/react": "^17",
     "@types/react-dom": "^17",
     "@umijs/plugin-antd": "0.15.0",
