@@ -18,7 +18,7 @@ $ yarn add @pansy/watermark
 
 ## 🔨 使用
 
-```
+```ts
 import { Watermark } from '@pansy/watermark';
 
 const watermark = new Watermark({ ... });
