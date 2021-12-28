@@ -54,9 +54,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ant-design/pro-field@npm:1.31.4":
-  version: 1.31.4
-  resolution: "@ant-design/pro-field@npm:1.31.4"
+"@ant-design/pro-field@npm:1.31.5":
+  version: 1.31.5
+  resolution: "@ant-design/pro-field@npm:1.31.5"
   dependencies:
     "@ant-design/icons": ^4.2.1
     "@ant-design/pro-provider": 1.5.4
@@ -72,16 +72,16 @@ __metadata:
   peerDependencies:
     antd: 4.x
     react: ">=16.9.0"
-  checksum: d0b8c8c56987c76393026607995992d57c81893b4cdf49aa866311fff0578fbbd8a06f9f22579d3e3264f09eb5136526b9cc2a40577aca7b3c9c42b980d27a66
+  checksum: e4e97d0c291b22f3abd6330606cf06e640dc04c50dc84d76252cab7419bb4d11872442b65fbac19304c56d4a62c3364b77867b1ff1c9386c4a1cbf605f8a047e
   languageName: node
   linkType: hard
 
-"@ant-design/pro-form@npm:1.52.4":
-  version: 1.52.4
-  resolution: "@ant-design/pro-form@npm:1.52.4"
+"@ant-design/pro-form@npm:1.52.5":
+  version: 1.52.5
+  resolution: "@ant-design/pro-form@npm:1.52.5"
   dependencies:
     "@ant-design/icons": ^4.2.1
-    "@ant-design/pro-field": 1.31.4
+    "@ant-design/pro-field": 1.31.5
     "@ant-design/pro-provider": 1.5.4
     "@ant-design/pro-utils": 1.32.3
     "@babel/runtime": ^7.16.3
@@ -96,7 +96,7 @@ __metadata:
     antd: 4.x
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: e6bc36e1aa861880e3005f36e0144028790b0d2d4a7af8afedc63489de159e00cc43c953a20765a30edf41a5a06fc9be1d8eeb598fcb3b7bd3f758ef5bdd6a6b
+  checksum: bab87e1f31b923f18326a61409f073174ad821cfbd5a747948ac19ce81cc517aa179c7adeb47fe17343edd7e4b6227b864f3142de46f0d9a4b5cf97c98fe8d5e
   languageName: node
   linkType: hard
 
@@ -3755,7 +3755,7 @@ __metadata:
   resolution: "@pansy/root@workspace:."
   dependencies:
     "@ant-design/pro-card": 1.18.20
-    "@ant-design/pro-form": 1.52.4
+    "@ant-design/pro-form": 1.52.5
     "@pansy/react-watermark": "workspace:packages/react"
     "@pansy/watermark": "workspace:packages/core"
     "@types/react": ^17

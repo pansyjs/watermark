@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@ant-design/pro-card": "1.18.20",
-    "@ant-design/pro-form": "1.52.4",
+    "@ant-design/pro-form": "1.52.5",
     "@pansy/react-watermark": "workspace:packages/react",
     "@pansy/watermark": "workspace:packages/core",
     "@types/react": "^17",
