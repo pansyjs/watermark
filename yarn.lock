@@ -54,13 +54,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ant-design/pro-field@npm:1.31.3":
-  version: 1.31.3
-  resolution: "@ant-design/pro-field@npm:1.31.3"
+"@ant-design/pro-field@npm:1.31.4":
+  version: 1.31.4
+  resolution: "@ant-design/pro-field@npm:1.31.4"
   dependencies:
     "@ant-design/icons": ^4.2.1
     "@ant-design/pro-provider": 1.5.4
-    "@ant-design/pro-utils": 1.32.2
+    "@ant-design/pro-utils": 1.32.3
     "@babel/runtime": ^7.16.3
     classnames: ^2.2.6
     lodash.tonumber: ^4.0.3
@@ -72,18 +72,18 @@ __metadata:
   peerDependencies:
     antd: 4.x
     react: ">=16.9.0"
-  checksum: f652719efe348800c05e999069016c44deeb2cb445fc934e86bbd3d43a7956f9cbad92d4a48467f2b672b45bb67abb314a800ad826e7518ba41e321489500d78
+  checksum: d0b8c8c56987c76393026607995992d57c81893b4cdf49aa866311fff0578fbbd8a06f9f22579d3e3264f09eb5136526b9cc2a40577aca7b3c9c42b980d27a66
   languageName: node
   linkType: hard
 
-"@ant-design/pro-form@npm:1.52.3":
-  version: 1.52.3
-  resolution: "@ant-design/pro-form@npm:1.52.3"
+"@ant-design/pro-form@npm:1.52.4":
+  version: 1.52.4
+  resolution: "@ant-design/pro-form@npm:1.52.4"
   dependencies:
     "@ant-design/icons": ^4.2.1
-    "@ant-design/pro-field": 1.31.3
+    "@ant-design/pro-field": 1.31.4
     "@ant-design/pro-provider": 1.5.4
-    "@ant-design/pro-utils": 1.32.2
+    "@ant-design/pro-utils": 1.32.3
     "@babel/runtime": ^7.16.3
     "@umijs/use-params": ^1.0.9
     classnames: ^2.2.6
@@ -96,7 +96,7 @@ __metadata:
     antd: 4.x
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 3e4230bd34b04f36769d4076eed233b1e60f975cb54d22f7f49db2be5242ae5149649f07ad92d4dc0779ecf6f306eccdf6389a5735485d1f4094d258ecf4f402
+  checksum: e6bc36e1aa861880e3005f36e0144028790b0d2d4a7af8afedc63489de159e00cc43c953a20765a30edf41a5a06fc9be1d8eeb598fcb3b7bd3f758ef5bdd6a6b
   languageName: node
   linkType: hard
 
@@ -111,26 +111,6 @@ __metadata:
     antd: 4.x
     react: ">=16.9.0"
   checksum: 1fc380a4282c2ab5e652412e5d1090f198238093e5e42d1912c9a0a0a68b57dda10a97dd3b18a472e78217594aa186c0888b8fd748cfde23600eb450577fb09e
-  languageName: node
-  linkType: hard
-
-"@ant-design/pro-utils@npm:1.32.2":
-  version: 1.32.2
-  resolution: "@ant-design/pro-utils@npm:1.32.2"
-  dependencies:
-    "@ant-design/icons": ^4.3.0
-    "@ant-design/pro-provider": 1.5.4
-    "@babel/runtime": ^7.16.3
-    classnames: ^2.2.6
-    moment: ^2.27.0
-    rc-util: ^5.0.6
-    react-sortable-hoc: ^2.0.0
-    swr: 1.1.0
-  peerDependencies:
-    antd: 4.x
-    react: ">=16.9.0"
-    react-dom: ">=16.9.0"
-  checksum: 1678ea59a7b2336a0192c09fceec649b6957f7dd779b2d29ccb46108db1448f45ddecb30db689c00bed31cea84d2356c1cd5d439d2c1f770aaa76c5cc075408e
   languageName: node
   linkType: hard
 
@@ -3775,7 +3755,7 @@ __metadata:
   resolution: "@pansy/root@workspace:."
   dependencies:
     "@ant-design/pro-card": 1.18.20
-    "@ant-design/pro-form": 1.52.3
+    "@ant-design/pro-form": 1.52.4
     "@pansy/react-watermark": "workspace:packages/react"
     "@pansy/watermark": "workspace:packages/core"
     "@types/react": ^17
