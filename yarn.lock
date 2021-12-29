@@ -3767,7 +3767,7 @@ __metadata:
     "@walrus/plugin-test": 1.1.0
     "@walrus/rollup-cli": 0.4.5
     antd: 4.18.0
-    dumi: 1.1.37
+    dumi: 1.1.38
     lerna: 4.0.0
     react: 17.0.2
     react-dom: 17.0.2
@@ -5036,9 +5036,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@umijs/preset-dumi@npm:1.1.37":
-  version: 1.1.37
-  resolution: "@umijs/preset-dumi@npm:1.1.37"
+"@umijs/preset-dumi@npm:1.1.38":
+  version: 1.1.38
+  resolution: "@umijs/preset-dumi@npm:1.1.38"
   dependencies:
     "@babel/core": ^7.7.2
     "@babel/generator": ^7.7.2
@@ -5086,7 +5086,7 @@ __metadata:
     unist-util-visit-parents: ^3.0.1
   peerDependencies:
     umi: 3.x
-  checksum: 6ba166c671b7dd2b6280f5f7f7f77f184a6ba8140118068b348824152d889371efaab9c192ce79e8f949e537d660183e23897cb592465f734b0cb8e2d3f19645
+  checksum: 3740dd27bde1343cf7f46e787da2730605ed750f8d78aa153fdc65e1e24cb1850d5ecdcdfcedd57fbb6ee54be690be10626c629bdb49f665c9bdefcb24034ebf
   languageName: node
   linkType: hard
 
@@ -8600,15 +8600,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dumi@npm:1.1.37":
-  version: 1.1.37
-  resolution: "dumi@npm:1.1.37"
+"dumi@npm:1.1.38":
+  version: 1.1.38
+  resolution: "dumi@npm:1.1.38"
   dependencies:
-    "@umijs/preset-dumi": 1.1.37
+    "@umijs/preset-dumi": 1.1.38
     umi: ^3.0.0
   bin:
     dumi: bin/dumi.js
-  checksum: fd4206b3fbde0980ada933e4800427505b0000c6ca400c75e0cab8bbcf5af1a60ecc0173b06109ca60fc1dc0e323d43c7f2fd6979c10bcb607e3bb75dbe1656b
+  checksum: f484d0c2e18f0c91e5f53050636fb8a4df88b80715f865a6cc94091b1fffdbd65eda29d9961d8d379f21f036533fee2de61b5d3eb90a349e45a6ea6efc6021d1
   languageName: node
   linkType: hard
 
