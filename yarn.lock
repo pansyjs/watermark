@@ -3766,7 +3766,7 @@ __metadata:
     "@walrus/plugin-release": 1.14.2
     "@walrus/plugin-test": 1.1.0
     "@walrus/rollup-cli": 0.4.5
-    antd: 4.18.0
+    antd: 4.18.1
     dumi: 1.1.38
     lerna: 4.0.0
     react: 17.0.2
@@ -5811,9 +5811,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"antd@npm:4.18.0":
-  version: 4.18.0
-  resolution: "antd@npm:4.18.0"
+"antd@npm:4.18.1":
+  version: 4.18.1
+  resolution: "antd@npm:4.18.1"
   dependencies:
     "@ant-design/colors": ^6.0.0
     "@ant-design/icons": ^4.7.0
@@ -5861,7 +5861,7 @@ __metadata:
   peerDependencies:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: e16a875efc8568aed6fd513e34a9a1b6146e140091eddf6d6a8b64310bb029f7b46746a97def180ece0a01287b81efcb7158183ab150a49641c9074a6d639ab1
+  checksum: 17ebc904e40a4358e813dd775300839455551e24ee5ea1dde715df8964b703ea33e122ead70952c479f504cf5fed2b9ffbfd3835858baa8d5b222f6142042fd9
   languageName: node
   linkType: hard
 
