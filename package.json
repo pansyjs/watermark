@@ -22,7 +22,7 @@
     "@umijs/plugin-antd": "0.15.0",
     "@walrus/cli": "1.3.4",
     "@walrus/commit": "1.2.2",
-    "@walrus/plugin-release": "1.14.2",
+    "@walrus/plugin-release": "1.14.3",
     "@walrus/plugin-test": "1.1.0",
     "@walrus/rollup-cli": "0.4.5",
     "antd": "4.18.1",
