@@ -37,12 +37,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ant-design/pro-card@npm:1.18.20":
-  version: 1.18.20
-  resolution: "@ant-design/pro-card@npm:1.18.20"
+"@ant-design/pro-card@npm:1.18.21":
+  version: 1.18.21
+  resolution: "@ant-design/pro-card@npm:1.18.21"
   dependencies:
     "@ant-design/icons": ^4.2.1
-    "@ant-design/pro-utils": 1.32.3
+    "@ant-design/pro-utils": 1.32.4
     "@babel/runtime": ^7.16.3
     classnames: ^2.2.6
     omit.js: ^2.0.2
@@ -50,7 +50,7 @@ __metadata:
   peerDependencies:
     antd: 4.x
     react: ">=16.9.0"
-  checksum: 783dca61da1254b159643e315a12684cf01937916d02545f999d824d8888884909c9a9e13611e150cf219f736bcdeb9484c542c0c4af30bbefee9f826216577e
+  checksum: f6529f1a9b8087af755c08ad3d4f1bd31dc9680f700a9abc0b708a2cb34fc9fa517115e74aff89aaec6745b5cdc52eead12f78b7d95af8df08df39af895325c3
   languageName: node
   linkType: hard
 
@@ -114,6 +114,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ant-design/pro-provider@npm:1.5.5":
+  version: 1.5.5
+  resolution: "@ant-design/pro-provider@npm:1.5.5"
+  dependencies:
+    "@babel/runtime": ^7.16.3
+    rc-util: ^5.0.1
+    swr: 1.1.0
+  peerDependencies:
+    antd: 4.x
+    react: ">=16.9.0"
+  checksum: 5f708b2ed199be734b1d9c2aad45baebbfe5b1ebdcebb785d0be5d877e5becd372edc6260b5fd963e153b59545c4c05c2b0aad43f6f0c5503a7ad9c170122c20
+  languageName: node
+  linkType: hard
+
 "@ant-design/pro-utils@npm:1.32.3":
   version: 1.32.3
   resolution: "@ant-design/pro-utils@npm:1.32.3"
@@ -131,6 +145,26 @@ __metadata:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
   checksum: 83d8f160801cf7ad5c8f058b4278f757131e8762c05d95267a439eaf1e87c3c797565137440763b40a71a01f1f3b826e4024ad34b8e5fa18a17085104b0c4164
+  languageName: node
+  linkType: hard
+
+"@ant-design/pro-utils@npm:1.32.4":
+  version: 1.32.4
+  resolution: "@ant-design/pro-utils@npm:1.32.4"
+  dependencies:
+    "@ant-design/icons": ^4.3.0
+    "@ant-design/pro-provider": 1.5.5
+    "@babel/runtime": ^7.16.3
+    classnames: ^2.2.6
+    moment: ^2.27.0
+    rc-util: ^5.0.6
+    react-sortable-hoc: ^2.0.0
+    swr: 1.1.0
+  peerDependencies:
+    antd: 4.x
+    react: ">=16.9.0"
+    react-dom: ">=16.9.0"
+  checksum: 0b706cd4f067521ea49727aee43698cdce359a43350ae7dbf5e8e99fd404c7d3f69edc0fc9786e9aad2e2afb479b78fee4e9e6d68c7596d10f4dae4ee7d94b8f
   languageName: node
   linkType: hard
 
@@ -3754,7 +3788,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@pansy/root@workspace:."
   dependencies:
-    "@ant-design/pro-card": 1.18.20
+    "@ant-design/pro-card": 1.18.21
     "@ant-design/pro-form": 1.52.5
     "@pansy/react-watermark": "workspace:packages/react"
     "@pansy/watermark": "workspace:packages/core"
