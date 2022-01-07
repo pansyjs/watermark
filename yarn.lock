@@ -37,12 +37,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ant-design/pro-card@npm:1.18.21":
-  version: 1.18.21
-  resolution: "@ant-design/pro-card@npm:1.18.21"
+"@ant-design/pro-card@npm:1.18.22":
+  version: 1.18.22
+  resolution: "@ant-design/pro-card@npm:1.18.22"
   dependencies:
     "@ant-design/icons": ^4.2.1
-    "@ant-design/pro-utils": 1.32.4
+    "@ant-design/pro-utils": 1.32.5
     "@babel/runtime": ^7.16.3
     classnames: ^2.2.6
     omit.js: ^2.0.2
@@ -50,7 +50,7 @@ __metadata:
   peerDependencies:
     antd: 4.x
     react: ">=16.9.0"
-  checksum: f6529f1a9b8087af755c08ad3d4f1bd31dc9680f700a9abc0b708a2cb34fc9fa517115e74aff89aaec6745b5cdc52eead12f78b7d95af8df08df39af895325c3
+  checksum: 6e1d5b379d5b881537289d32ed2a8dfb25c8f1e4bbc61458fa0fc75e15c20695a4a38b68cef5bff14c185e977f1f9bbc21f885d431ddf990f42144e83f183f11
   languageName: node
   linkType: hard
 
@@ -131,6 +131,26 @@ __metadata:
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
   checksum: 0b706cd4f067521ea49727aee43698cdce359a43350ae7dbf5e8e99fd404c7d3f69edc0fc9786e9aad2e2afb479b78fee4e9e6d68c7596d10f4dae4ee7d94b8f
+  languageName: node
+  linkType: hard
+
+"@ant-design/pro-utils@npm:1.32.5":
+  version: 1.32.5
+  resolution: "@ant-design/pro-utils@npm:1.32.5"
+  dependencies:
+    "@ant-design/icons": ^4.3.0
+    "@ant-design/pro-provider": 1.5.5
+    "@babel/runtime": ^7.16.3
+    classnames: ^2.2.6
+    moment: ^2.27.0
+    rc-util: ^5.0.6
+    react-sortable-hoc: ^2.0.0
+    swr: 1.1.0
+  peerDependencies:
+    antd: 4.x
+    react: ">=16.9.0"
+    react-dom: ">=16.9.0"
+  checksum: 2051f7416027ff0163cc2561e69ad790efeb61f0c54cdb1a1631590c4f39c1c55fa82963b13db39698f79197efe74a243f4a857f0ec8357077fe73313a1990cc
   languageName: node
   linkType: hard
 
@@ -3754,7 +3774,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@pansy/root@workspace:."
   dependencies:
-    "@ant-design/pro-card": 1.18.21
+    "@ant-design/pro-card": 1.18.22
     "@ant-design/pro-form": 1.52.6
     "@pansy/react-watermark": "workspace:packages/react"
     "@pansy/watermark": "workspace:packages/core"
