@@ -61,7 +61,7 @@ watermark.update({ ... });
 watermark.hide();
 
 // 显示水印
-watermark.hide();
+watermark.show();
 
 // 销毁水印
 watermark.destroy();
