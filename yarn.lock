@@ -37,9 +37,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ant-design/pro-card@npm:1.18.22":
-  version: 1.18.22
-  resolution: "@ant-design/pro-card@npm:1.18.22"
+"@ant-design/pro-card@npm:1.18.23":
+  version: 1.18.23
+  resolution: "@ant-design/pro-card@npm:1.18.23"
   dependencies:
     "@ant-design/icons": ^4.2.1
     "@ant-design/pro-utils": 1.32.5
@@ -50,7 +50,7 @@ __metadata:
   peerDependencies:
     antd: 4.x
     react: ">=16.9.0"
-  checksum: 6e1d5b379d5b881537289d32ed2a8dfb25c8f1e4bbc61458fa0fc75e15c20695a4a38b68cef5bff14c185e977f1f9bbc21f885d431ddf990f42144e83f183f11
+  checksum: 9310b31b94f3c25104ee69f5c36e882d94d5de28bacd43df6abf9f46e3de4664e9a7fc3b7e01d8c5a4be146aac8841f9288b870e0aaf0e4ce18b3f718d10bc6e
   languageName: node
   linkType: hard
 
@@ -3754,7 +3754,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@pansy/root@workspace:."
   dependencies:
-    "@ant-design/pro-card": 1.18.22
+    "@ant-design/pro-card": 1.18.23
     "@ant-design/pro-form": 1.52.7
     "@pansy/react-watermark": "workspace:packages/react"
     "@pansy/watermark": "workspace:packages/core"
