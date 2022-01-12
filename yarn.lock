@@ -76,9 +76,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ant-design/pro-form@npm:1.52.9":
-  version: 1.52.9
-  resolution: "@ant-design/pro-form@npm:1.52.9"
+"@ant-design/pro-form@npm:1.52.10":
+  version: 1.52.10
+  resolution: "@ant-design/pro-form@npm:1.52.10"
   dependencies:
     "@ant-design/icons": ^4.2.1
     "@ant-design/pro-field": 1.31.8
@@ -94,9 +94,10 @@ __metadata:
     use-media-antd-query: ^1.0.6
   peerDependencies:
     antd: 4.x
+    rc-field-form: ^1.22.0
     react: ">=16.9.0"
     react-dom: ">=16.9.0"
-  checksum: 961f853c4ae69601c0998fe8fc8396cdd73fdf577d7dda588fc43720ad0898892be67f805ad9f86305937b436afa6d7319b58e57a2990508a23622b7d227a2c6
+  checksum: 93fed3ac078358e9cf2f407c318f7b000718cc7ad792531073e5674129544d1c6a2507cb9ee19ea3d519977d823f3be1d87b4cc7712afe4a54b21ef83d34cceb
   languageName: node
   linkType: hard
 
@@ -3755,7 +3756,7 @@ __metadata:
   resolution: "@pansy/root@workspace:."
   dependencies:
     "@ant-design/pro-card": 1.18.23
-    "@ant-design/pro-form": 1.52.9
+    "@ant-design/pro-form": 1.52.10
     "@pansy/react-watermark": "workspace:packages/react"
     "@pansy/watermark": "workspace:packages/core"
     "@types/react": ^17
