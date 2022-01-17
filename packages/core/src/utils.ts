@@ -187,7 +187,7 @@ export function getDrawPattern(config: WatermarkOptions): Promise<DrawPatternRes
       initY = initY < 0 ? 0 : initY;
 
       for (let i = 0; i < texts.length; i ++) {
-        ctx.fillText(texts[i], markWidth / 2, initY + (lineHeight * i));
+        ctx.fillText(texts[i] || '', markWidth / 2, initY + (lineHeight * i));
       }
 
       resolve({
