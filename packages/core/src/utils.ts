@@ -63,7 +63,8 @@ export const getRandomId = (prefix = '') => {
  */
 export const getContainer = (
   container: WatermarkOptions['container'],
-  watermarkId: string
+  watermarkId: string,
+  containerStyle: Record<string, any>  = {},
 ): HTMLElement  => {
   let dom: HTMLElement | null;
 
@@ -78,12 +79,12 @@ export const getContainer = (
 
   dom.setAttribute(attributeNameTag, watermarkId);
 
-  let style = dom.getAttribute('style') ?? '';
-
-  if (!style.includes('relative')) {
-    style += 'position:relative;';
+  const style = {
+    position: 'relative',
+    ...containerStyle,
   }
-  dom.setAttribute('style', style);
+
+  dom.setAttribute('style', getStyleStr(style));
 
   return dom;
 }

@@ -23,6 +23,7 @@ export const Watermark: React.FC<WatermarkProps> = ({
     if (!watermark.current) {
       watermark.current = new BaseWatermark({
         ...rest,
+        containerStyle: style,
         container: !isBody ? container.current : undefined
       });
 
@@ -30,7 +31,10 @@ export const Watermark: React.FC<WatermarkProps> = ({
         watermark.current.hide();
       }
     } else {
-      watermark.current.update(rest);
+      watermark.current.update({
+        ...rest,
+        containerStyle: style,
+      });
     }
   }, [rest]);
 

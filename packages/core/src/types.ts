@@ -40,6 +40,8 @@ export interface WatermarkOptions extends Partial<BaseOptions> {
   zIndex?: number;
   /** 水印挂载的容器 */
   container?: HTMLElement | string | null;
+   /** 水印挂载的样式 */
+  containerStyle?: Record<string, any>;
   /** 展示模式，interval表示错行展示 */
   mode?: 'repeat' | 'interval';
 }
