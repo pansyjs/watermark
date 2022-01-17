@@ -31,6 +31,10 @@ group:
 
 <code src="./demo/demo05.tsx" />
 
+### 动态内容
+
+<code src="./demo/demo06.tsx" />
+
 ## API
 
 ### 基本参数

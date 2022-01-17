@@ -4,7 +4,7 @@ import Content from '../../../../docs/components/content';
 
 export default () => {
   return (
-    <Watermark text="测试水印">
+    <Watermark text="测试水印" style={{ overflow: 'hidden' }}>
       <Content />
     </Watermark>
   )
