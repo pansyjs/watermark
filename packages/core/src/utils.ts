@@ -77,9 +77,13 @@ export const getContainer = (
   }
 
   dom.setAttribute(attributeNameTag, watermarkId);
-  dom.setAttribute('style', getStyleStr({
+
+  const oldStyle = dom.getAttribute('style');
+  const style = getStyleStr({
     position: 'relative'
-  }));
+  });
+
+  dom.setAttribute('style', oldStyle ? oldStyle + style : style);
 
   return dom;
 }
