@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
-yarn
-yarn site
+pnpm
+pnpm site
