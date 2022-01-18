@@ -5,7 +5,7 @@ importers:
   .:
     specifiers:
       '@ant-design/pro-card': 1.18.24
-      '@ant-design/pro-form': 1.52.11
+      '@ant-design/pro-form': 1.52.12
       '@pansy/react-watermark': workspace:*
       '@pansy/watermark': workspace:*
       '@types/react': ^17
@@ -25,7 +25,7 @@ importers:
       use-clipboard-hook: 1.1.1
     devDependencies:
       '@ant-design/pro-card': 1.18.24_fe8d130e25f6a6aae390c6034526cbbb
-      '@ant-design/pro-form': 1.52.11_fe8d130e25f6a6aae390c6034526cbbb
+      '@ant-design/pro-form': 1.52.12_fe8d130e25f6a6aae390c6034526cbbb
       '@pansy/react-watermark': link:packages/react
       '@pansy/watermark': link:packages/core
       '@types/react': 17.0.38
@@ -122,8 +122,8 @@ packages:
       - react-dom
     dev: true
 
-  /@ant-design/pro-form/1.52.11_fe8d130e25f6a6aae390c6034526cbbb:
-    resolution: {integrity: sha512-oSwj46JTPOyLG5WbfQuoBiKT11kWBrb/H1aPbYqApQi8PKfOMVndKWLdcLsC9BCDeS0tKkH6CY8JRNBa+YUvEQ==}
+  /@ant-design/pro-form/1.52.12_fe8d130e25f6a6aae390c6034526cbbb:
+    resolution: {integrity: sha512-CEW8VyUaSuZfMY/E1VAfg6gLBRHp8w+i9U4HoCsMDAzRsWemswi/SF0VhjG/oDqTUTeSNgPecar9vkvH0jQWgw==}
     peerDependencies:
       antd: 4.x
       rc-field-form: ^1.22.0
