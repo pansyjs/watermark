@@ -21,7 +21,7 @@ importers:
       react: 17.0.2
       react-dom: 17.0.2
       tsup: 5.11.11
-      typescript: 4.5.4
+      typescript: 4.5.5
       use-clipboard-hook: 1.1.1
     devDependencies:
       '@ant-design/pro-card': 1.18.24_663f9540e4d1ae06d5716329d39f8857
@@ -36,12 +36,12 @@ importers:
       '@walrus/plugin-release': 1.14.3_@walrus+cli@1.3.4
       '@walrus/plugin-test': 1.1.0
       antd: 4.18.4_react-dom@17.0.2+react@17.0.2
-      dumi: 1.1.38_3e110919350e0ee2e64d1a654bd03c09
+      dumi: 1.1.38_3a6359ff0dae16692fd6f0778ea71593
       lerna: 4.0.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      tsup: 5.11.11_typescript@4.5.4
-      typescript: 4.5.4
+      tsup: 5.11.11_typescript@4.5.5
+      typescript: 4.5.5
       use-clipboard-hook: 1.1.1_react@17.0.2
 
   packages/core:
@@ -4702,7 +4702,7 @@ packages:
       - react-dom
     dev: true
 
-  /@umijs/preset-dumi/1.1.38_292e97ae97de0272f74ca6f6952e1344:
+  /@umijs/preset-dumi/1.1.38_20d11b945a08de0e0d2c4c5669fce569:
     resolution: {integrity: sha512-3pOU3+aJqfvIZ8KcUpGf8HyO6+SMQuuFuY8AcAYM+LQBme0RfxBAGDPSvIo5vO2ayK80glKhpGxPGXRWck2syw==}
     peerDependencies:
       umi: 3.x
@@ -4734,7 +4734,7 @@ packages:
       js-yaml: 3.14.1
       lodash.throttle: 4.1.1
       lz-string: 1.4.4
-      react-docgen-typescript-dumi-tmp: 1.22.1-0_typescript@4.5.4
+      react-docgen-typescript-dumi-tmp: 1.22.1-0_typescript@4.5.5
       rehype-autolink-headings: 4.0.0
       rehype-mathjax: 3.1.0
       rehype-remove-comments: 4.0.2
@@ -6992,7 +6992,7 @@ packages:
       '@umijs/preset-dumi': 1.x
       react: ^16.13.1 || ^17.0.0
     dependencies:
-      '@umijs/preset-dumi': 1.1.38_292e97ae97de0272f74ca6f6952e1344
+      '@umijs/preset-dumi': 1.1.38_20d11b945a08de0e0d2c4c5669fce569
       lodash.throttle: 4.1.1
       prism-react-renderer: 1.2.1_react@17.0.2
       prismjs: 1.26.0
@@ -7004,11 +7004,11 @@ packages:
       - react-dom
     dev: true
 
-  /dumi/1.1.38_3e110919350e0ee2e64d1a654bd03c09:
+  /dumi/1.1.38_3a6359ff0dae16692fd6f0778ea71593:
     resolution: {integrity: sha512-ooYdJXtxItb0Tx8qD4YiwWiyl3tT1uDpMnXzMt3xcBaCG9JYXM9YB87VbHNezMVGIVb2rzBbD0qrnRXKz1Gl+A==}
     hasBin: true
     dependencies:
-      '@umijs/preset-dumi': 1.1.38_292e97ae97de0272f74ca6f6952e1344
+      '@umijs/preset-dumi': 1.1.38_20d11b945a08de0e0d2c4c5669fce569
       umi: 3.5.20
     transitivePeerDependencies:
       - acorn
@@ -12649,12 +12649,12 @@ packages:
       tinycolor2: 1.4.2
     dev: true
 
-  /react-docgen-typescript-dumi-tmp/1.22.1-0_typescript@4.5.4:
+  /react-docgen-typescript-dumi-tmp/1.22.1-0_typescript@4.5.5:
     resolution: {integrity: sha512-wjuAm1yj+ZZucovow2VF0MXkH2SGZ+squZxfNdnam3oyUbHy/xZaU1ZabCn7rY+13ZFx0/NLda+ZuBgF3g8vBA==}
     peerDependencies:
       typescript: '>= 3.x'
     dependencies:
-      typescript: 4.5.4
+      typescript: 4.5.5
     dev: true
 
   /react-dom/16.14.0_react@16.14.0:
@@ -14272,7 +14272,7 @@ packages:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
     dev: true
 
-  /tsup/5.11.11_typescript@4.5.4:
+  /tsup/5.11.11_typescript@4.5.5:
     resolution: {integrity: sha512-rgbTu+KhAI9PdGUS07rKohDXbRLTstBGJaxl75q7RZYRGF+n+kN8L4RlXY5pqYb9Hsq0gEB6nS39v7nSvVBS+g==}
     hasBin: true
     peerDependencies:
@@ -14295,7 +14295,7 @@ packages:
       source-map: 0.7.3
       sucrase: 3.20.3
       tree-kill: 1.2.2
-      typescript: 4.5.4
+      typescript: 4.5.5
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -14362,8 +14362,8 @@ packages:
     resolution: {integrity: sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=}
     dev: true
 
-  /typescript/4.5.4:
-    resolution: {integrity: sha512-VgYs2A2QIRuGphtzFV7aQJduJ2gyfTljngLzjpfW9FoYZF6xuw1W0vW9ghCKLfcWrCFxK81CSGRAvS1pn4fIUg==}
+  /typescript/4.5.5:
+    resolution: {integrity: sha512-TCTIul70LyWe6IJWT8QSYeA54WQe8EjQFU4wY52Fasj5UKx88LNYKCgBEHcOMOrFF1rKGbD8v/xcNWVUq9SymA==}
     engines: {node: '>=4.2.0'}
     hasBin: true
     dev: true
