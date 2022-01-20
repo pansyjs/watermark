@@ -3,14 +3,14 @@ import { Button, Space } from 'antd';
 import { Watermark } from '@pansy/react-watermark';
 
 export default () => {
-  const [visable, setVisable] = useState<boolean>(false);
+  const [visible, setVisible] = useState<boolean>(false);
 
   const handleShow = () => {
-    setVisable(true);
+    setVisible(true);
   }
 
   const handleHide = () => {
-    setVisable(false);
+    setVisible(false);
   }
 
   return (
@@ -19,7 +19,7 @@ export default () => {
         <Button onClick={handleShow}>显示</Button>
         <Button onClick={handleHide}>隐藏</Button>
       </Space>
-      <Watermark isBody visable={visable} text="测试水印" />
+      <Watermark isBody visible={visible} text="测试水印" />
     </div>
   );
 }

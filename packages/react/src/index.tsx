@@ -4,7 +4,7 @@ import { Watermark as BaseWatermark, WatermarkOptions } from '@pansy/watermark';
 export interface WatermarkProps extends WatermarkOptions {
   className?: string;
   style?: React.CSSProperties;
-  visable?: boolean;
+  visible?: boolean;
   isBody?: boolean;
 }
 
@@ -12,7 +12,7 @@ export const Watermark: React.FC<WatermarkProps> = ({
   className,
   style,
   isBody,
-  visable = true,
+  visible = true,
   children,
   ...rest
 }) => {
@@ -27,7 +27,7 @@ export const Watermark: React.FC<WatermarkProps> = ({
         container: !isBody ? container.current : undefined
       });
 
-      if (!visable) {
+      if (!visible) {
         watermark.current.hide();
       }
     } else {
@@ -40,13 +40,13 @@ export const Watermark: React.FC<WatermarkProps> = ({
 
   useEffect(
     () => {
-      if (visable) {
+      if (visible) {
         watermark.current?.show();
       } else {
         watermark.current?.hide();
       }
     },
-    [visable]
+    [visible]
   );
 
   useEffect(
