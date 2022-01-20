@@ -4,14 +4,14 @@ import Content from '../../../../docs/components/content';
 import { Watermark } from '@pansy/react-watermark';
 
 export default () => {
-  const [visable, setVisable] = useState<boolean>(false);
+  const [visible, setVisible] = useState<boolean>(false);
 
   const handleShow = () => {
-    setVisable(true);
+    setVisible(true);
   }
 
   const handleHide = () => {
-    setVisable(false);
+    setVisible(false);
   }
 
   return (
@@ -23,7 +23,7 @@ export default () => {
             <Button onClick={handleHide}>隐藏</Button>
           </Space>
           <Content />
-          {visable && <p>动态内容</p>}
+          {visible && <p>动态内容</p>}
         </>
       </Watermark>
     </>

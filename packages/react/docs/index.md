@@ -41,7 +41,7 @@ group:
 
 |参数|说明|类型|默认值|
 |---|---|---|---|
-|visable|水印是否显示|`boolean`|`true`|
+|visible|水印是否显示|`boolean`|`true`|
 |image|图片源，建议导出 2 倍或 3 倍图，优先使用图片渲染水印|`string`|-|
 |text|水印文本, 为数组时表示多行水印|`string` \| `string[]`|-|
 |zIndex|水印层级|`number`|`9999`|
