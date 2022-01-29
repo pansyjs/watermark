@@ -20,7 +20,7 @@ importers:
       lerna: 4.0.0
       react: 17.0.2
       react-dom: 17.0.2
-      tsup: 5.11.11
+      tsup: 5.11.12
       typescript: 4.5.5
       use-clipboard-hook: 1.1.1
     devDependencies:
@@ -40,7 +40,7 @@ importers:
       lerna: 4.0.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
-      tsup: 5.11.11_typescript@4.5.5
+      tsup: 5.11.12_typescript@4.5.5
       typescript: 4.5.5
       use-clipboard-hook: 1.1.1_react@17.0.2
 
@@ -5827,12 +5827,14 @@ packages:
     resolution: {integrity: sha1-y5T662HIaWRR2zZTThQi+U8K7og=}
     dev: true
 
-  /bundle-require/2.2.0_esbuild@0.14.11:
-    resolution: {integrity: sha512-JDVxYEAxEX1g8AWtadiIkCkFf42RulEl5AOIvUa4cpuEL/VKpK2lJwogyswHnp+qizNQxM0Ylamw7CjPRaJZuA==}
+  /bundle-require/3.0.2_esbuild@0.14.11:
+    resolution: {integrity: sha512-WLS50LRdi8oAMnQfoxqjI3Fszi0xaI6dJumvtX909u0WREkYCuFGeE2UwMn5H8bSUXWtUB0XeBqNkgpVjMcYyQ==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     peerDependencies:
       esbuild: '>=0.13'
     dependencies:
       esbuild: 0.14.11
+      load-tsconfig: 0.2.2
     dev: true
 
   /byline/5.0.0:
@@ -9961,6 +9963,11 @@ packages:
       parse-json: 5.2.0
       strip-bom: 4.0.0
       type-fest: 0.6.0
+    dev: true
+
+  /load-tsconfig/0.2.2:
+    resolution: {integrity: sha512-9B4XOMjNhphRmXg3YHFnpgEH5fmYKofXJ7M6sLkRcfJ5DcuPiStlQ1Or+1Rv/aML716kQ9Q+C9zJGUcfMYiq4Q==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
     dev: true
 
   /loader-utils/1.4.0:
@@ -14289,8 +14296,8 @@ packages:
     resolution: {integrity: sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==}
     dev: true
 
-  /tsup/5.11.11_typescript@4.5.5:
-    resolution: {integrity: sha512-rgbTu+KhAI9PdGUS07rKohDXbRLTstBGJaxl75q7RZYRGF+n+kN8L4RlXY5pqYb9Hsq0gEB6nS39v7nSvVBS+g==}
+  /tsup/5.11.12_typescript@4.5.5:
+    resolution: {integrity: sha512-zwOcdMaWKgbcJeWQ654OYdCfcy+dj9d3nzutPPmqiDPeHkmxjovIFX6xqvPTcIkMEuTsUgHuQDoJ0qS3r16zqA==}
     hasBin: true
     peerDependencies:
       typescript: ^4.1.0
@@ -14298,7 +14305,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      bundle-require: 2.2.0_esbuild@0.14.11
+      bundle-require: 3.0.2_esbuild@0.14.11
       cac: 6.7.12
       chokidar: 3.5.2
       debug: 4.3.3
