@@ -142,6 +142,7 @@ export class Watermark {
    */
   _destroyMutationObserver = () => {
     if (this.mutationObserver) {
+      this.mutationObserver.takeRecords();
       this.mutationObserver.disconnect();
       this.mutationObserver = null;
     }
