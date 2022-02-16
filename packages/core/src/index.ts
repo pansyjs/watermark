@@ -180,6 +180,8 @@ export class Watermark {
       this.watermarkDom.setAttribute('style', getStyleStr(this.style));
     }
 
+    this.watermarkDom.setAttribute(attributeNameTag, this.watermarkTag);
+
     return this.watermarkDom;
   }
 
@@ -213,8 +215,7 @@ export class Watermark {
     // 解决滚动区域无水印问题
     const height = this._getWatermarkHeight();
     // 获取水印DOM
-    const watermaskDom = await this._getWatermarkDom(height);
-    watermaskDom.setAttribute(attributeNameTag, this.watermarkTag)
+    this.watermarkDom = await this._getWatermarkDom(height);
 
     // 删除已有水印
     if (this.watermarkContent) {
@@ -236,7 +237,7 @@ export class Watermark {
       this.shadowRoot = this.watermarkContent;
     }
 
-    this.shadowRoot.append(watermaskDom);
+    this.shadowRoot.append(this.watermarkDom);
 
     if (MutationObserver && this.options.monitor) {
       this.mutationObserver = new MutationObserver((mutations) => {
