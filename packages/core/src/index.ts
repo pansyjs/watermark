@@ -62,9 +62,6 @@ export class Watermark {
     };
     this.style.zIndex = this.options.zIndex;
 
-    if (!this.options.monitor) {
-      this._destroyMutationObserver();
-    }
     this._render();
   }
 
@@ -203,6 +200,8 @@ export class Watermark {
   }
 
   async _render() {
+    this._destroyMutationObserver();
+
     // 获取水印挂载节点
     this.container = getContainer(this.options.container, this.watermarkTag, this.options.containerStyle);
     // 获取水印父节点
@@ -210,8 +209,6 @@ export class Watermark {
       this.watermarkContent = getContent(this.watermarkTag);
       this.container.append(this.watermarkContent);
     }
-
-    this._destroyMutationObserver();
 
     // 解决滚动区域无水印问题
     const height = this._getWatermarkHeight();
