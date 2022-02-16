@@ -7,7 +7,7 @@ hero:
   desc: 强大的水印组件，助你快速的给网页添加水印。
   actions:
     - text: 快速开始 →
-      link: /docs/getting-started
+      link: /guide/getting-started
 
 features:
   - icon: https://gw.alipayobjects.com/mdn/rms_08e378/afts/img/A*43rfS4dD0MUAAAAAAAAAAABkARQnAQ
