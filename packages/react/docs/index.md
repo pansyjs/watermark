@@ -1,7 +1,7 @@
 ---
 nav:
-  title: 组件包
-  path: /packages
+  title: 示例
+  path: /example
 group:
   title: 框架
   path: /frames

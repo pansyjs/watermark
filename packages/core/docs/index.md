@@ -1,13 +1,13 @@
 ---
 nav:
-  title: 组件包
-  path: /packages
+  title: 示例
+  path: /example
 group:
   title: 核心
   path: /core
 ---
 
-# @pansy/watermark
+# watermark
 
 ## 代码示例
 
