@@ -15,6 +15,10 @@ yarn add @pansy/watermark
 
 // pnpm
 pnpm install --dev @pansy/watermark
+
+// 安装react 或 vue 版本包
+pnpm install @pansy/react-watermark
+pnpm install @pansy/vue-watermark
 ```
 
 ## 使用
