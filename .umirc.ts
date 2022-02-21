@@ -10,6 +10,14 @@ export default {
   navs: [
     null,
     {
+      title: '友情链接',
+      children: [
+        { title: 'AMap', path: 'https://amap.xingkang.wang' },
+        { title: 'Hooks', path: 'https://hooks.xingkang.wang' },
+        { title: '证件加水印', path: 'https://watermark-pro.vercel.app' },
+      ]
+    },
+    {
       title: 'GitHub',
       path: 'https://github.com/pansyjs/watermark',
     },
