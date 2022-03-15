@@ -65,6 +65,7 @@ export const getContainer = (
   container: WatermarkOptions['container'],
   watermarkId: string,
   containerStyle: Record<string, any>  = {},
+  pack?: boolean
 ): HTMLElement  => {
   let dom: HTMLElement | null;
 
@@ -79,9 +80,13 @@ export const getContainer = (
 
   dom.setAttribute(attributeNameTag, watermarkId);
 
-  const style = {
+  const style: Record<string, any>= {
     position: 'relative',
     ...containerStyle,
+  }
+
+  if (!pack) {
+    delete style.position;
   }
 
   dom.setAttribute('style', getStyleStr(style));

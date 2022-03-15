@@ -19,7 +19,8 @@ export const defaultOptions: Partial<WatermarkOptions> = {
   textBaseline: 'alphabetic',
   monitor: true,
   zIndex: 9999,
-  mode: 'interval'
+  mode: 'interval',
+  pack: true,
 }
 
 /** 用于标记是否需要保护 */

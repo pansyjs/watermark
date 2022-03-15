@@ -35,6 +35,10 @@ group:
 
 <code src="./demo/demo06.tsx" />
 
+### 内容可包含水印组件
+
+<code src="./demo/demo07.tsx" />
+
 ## API
 
 ### 基本参数
@@ -68,3 +72,4 @@ group:
 |offsetTop|水印在 canvas 画布上绘制的垂直偏移量|`number`|`0`|
 |width|单个水印宽度|`number`|`120`|
 |height|单个水印高度|`number`|`64`|
+|pack|是否使用水印组件包裹内容|`boolean`|`true`|
