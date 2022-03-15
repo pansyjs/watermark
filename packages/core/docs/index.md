@@ -62,6 +62,7 @@ group:
 |gapY|水印之间的垂直间距|`number`|`100`|
 |offsetLeft|水印在 canvas 画布上绘制的水平偏移量|`number`|`0`|
 |offsetTop|水印在 canvas 画布上绘制的垂直偏移量|`number`|`0`|
+|pack|是否使用水印组件包裹内容|`boolean`|`true`|
 
 ### 方法
 

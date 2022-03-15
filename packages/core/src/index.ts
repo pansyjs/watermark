@@ -203,7 +203,12 @@ export class Watermark {
     this._destroyMutationObserver();
 
     // 获取水印挂载节点
-    this.container = getContainer(this.options.container, this.watermarkTag, this.options.containerStyle);
+    this.container = getContainer(
+      this.options.container,
+      this.watermarkTag,
+      this.options.containerStyle,
+      this.options.pack
+    );
     // 获取水印父节点
     if (!this.watermarkContent) {
       this.watermarkContent = getContent(this.watermarkTag);
