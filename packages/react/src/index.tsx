@@ -36,7 +36,7 @@ export const Watermark: React.FC<WatermarkProps> = ({
         containerStyle: style,
       });
     }
-  }, [rest]);
+  }, [JSON.stringify(rest)]);
 
   useEffect(
     () => {
