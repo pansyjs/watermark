@@ -39,7 +39,7 @@ export interface WatermarkOptions extends Partial<BaseOptions> {
   /** 样式层级 */
   zIndex?: number;
   /** 是否使用水印组件包裹内容  */
-  pack?: true;
+  pack?: boolean;
   /** 水印挂载的容器 */
   container?: HTMLElement | string | null;
    /** 水印挂载的样式 */
