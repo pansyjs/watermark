@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.9](https://github.com/pansyjs/watermark/compare/@pansy/react-watermark@3.1.8...@pansy/react-watermark@3.1.9) (2022-03-15)
+
+**Note:** Version bump only for package @pansy/react-watermark
+
+
+
+
+
 ## [3.1.8](https://github.com/pansyjs/watermark/compare/@pansy/react-watermark@3.1.7...@pansy/react-watermark@3.1.8) (2022-01-20)
 
 **Note:** Version bump only for package @pansy/react-watermark
