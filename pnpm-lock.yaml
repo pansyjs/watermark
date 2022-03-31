@@ -49,7 +49,7 @@ importers:
 
   packages/react:
     specifiers:
-      '@pansy/watermark': 2.0.8
+      '@pansy/watermark': 2.0.10
     dependencies:
       '@pansy/watermark': link:../core
 
