@@ -1,0 +1,37 @@
+{
+  "name": "@pansy/vue-watermark",
+  "version": "1.0.0",
+  "description": "Watermark for vue, both v2 and v3",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test:2": "vue-demi-switch 2",
+    "test:3": "vue-demi-switch 3"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "@vue/composition-api": "^1.1.0",
+    "vue": "^2.6.14 || >=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@pansy/watermark": "^2.0.8",
+    "vue-demi": "^0.12.1"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "devDependencies": {
+    "vue": "^3.2.31"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "../../base-config.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "declaration": true,
+    "esModuleInterop": true,
+    "baseUrl": ".",
+      "paths": {
+        "@pansy/vue-watermark": [
+          "./src/*"
+        ],
+      }
+  }
+}
