@@ -46,7 +46,8 @@ yarn add @pansy/watermark
 
 ## 🚗 框架封装
 
-- React [@pansy/react-watermark](https://github.com/pansyjs/react-components/tree/master/packages/watermark)
+- React [@pansy/react-watermark](https://github.com/pansyjs/react-components/tree/master/packages/react)
+- React [@pansy/vue-watermark](https://github.com/pansyjs/react-components/tree/master/packages/vue)
 
 ## 🔨 使用
 ```ts
