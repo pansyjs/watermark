@@ -1,6 +1,6 @@
 {
   "name": "@pansy/vue-watermark",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Watermark for vue, both v2 and v3",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
