@@ -17,12 +17,12 @@ export default defineComponent({
     Watermark,
   },
   data() {
-   return {
-     visible: true,
-     options: {
-       text: '测试水印',
-     }
-   }
+    return {
+      visible: true,
+      options: {
+        text: '测试水印',
+      }
+    }
   },
   methods: {
     handleShow() {

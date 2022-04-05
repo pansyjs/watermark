@@ -7,7 +7,7 @@
     "build:vue": "vue-cli-service build"
   },
   "dependencies": {
-    "@pansy/vue-watermark": "workspace:^1.0.0",
+    "@pansy/vue-watermark": "^1.0.0",
     "@vue/composition-api": "^1.4.9",
     "vue": "^2.6.14"
   },
