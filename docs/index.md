@@ -21,7 +21,7 @@ features:
     desc: 安全防御，防止他人删除水印dom或修改样式属性。
   - icon: https://gw.alipayobjects.com/zos/basement_prod/a1c647aa-a410-4024-8414-c9837709cb43/k7787itw_w126_h114.png
     title: 框架可用
-    desc: 针对 react、vue、vue3 提供对应开发包。
+    desc: 针对 react、vue2、vue3 提供对应开发包。
   - icon: https://gw.alipayobjects.com/zos/basement_prod/d078a5a9-1cb3-4352-9f05-505c2e98bc95/k7788v4b_w102_h126.png
     title: 文案多样性
     desc: 支持图片、单行文字、多行文字多种形式。
@@ -38,4 +38,5 @@ footer: Open-source MIT Licensed | Copyright © 2020-present
 | --- | --- | --- |
 | @pansy/watermark | [![watermark](https://img.shields.io/npm/dw/@pansy/watermark.svg)](https://www.npmjs.com/package/@pansy/watermark) | [![npm package](https://img.shields.io/npm/v/@pansy/watermark.svg?style=flat-square?style=flat-square)](https://www.npmjs.com/package/@pansy/watermark) |
 | @pansy/react-watermark | [![react-watermark](https://img.shields.io/npm/dw/@pansy/react-watermark.svg)](https://www.npmjs.com/package/@pansy/react-watermark) | [![npm package](https://img.shields.io/npm/v/@pansy/react-watermark.svg?style=flat-square?style=flat-square)](https://www.npmjs.com/package/@pansy/react-watermark) |
+| @pansy/vue-watermark | [![vue-watermark](https://img.shields.io/npm/dw/@pansy/vue-watermark.svg)](https://www.npmjs.com/package/@pansy/vue-watermark) | [![npm package](https://img.shields.io/npm/v/@pansy/vue-watermark.svg?style=flat-square?style=flat-square)](https://www.npmjs.com/package/@pansy/vue-watermark) |
 
