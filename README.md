@@ -46,8 +46,11 @@ yarn add @pansy/watermark
 
 ## 🚗 框架封装
 
-- React [@pansy/react-watermark](https://github.com/pansyjs/react-components/tree/master/packages/react)
-- React [@pansy/vue-watermark](https://github.com/pansyjs/react-components/tree/master/packages/vue)
+|框架|版本|
+|--|--|
+|React| [![npm version][npm-react-v-image]][npm-react-url] |
+|Vue| [![npm version][npm-vue-v-image]][npm-vue-url] |
+
 
 ## 🔨 使用
 ```ts
@@ -80,10 +83,14 @@ watermark.destroy();
 
 
 [npm-v-image]: https://img.shields.io/npm/v/@pansy/watermark.svg
+[npm-url]: http://npmjs.org/package/@pansy/watermark
+[npm-react-v-image]: https://img.shields.io/npm/v/@pansy/react-watermark.svg
+[npm-react-url]: http://npmjs.org/package/@pansy/react-watermark
+[npm-vue-v-image]: https://img.shields.io/npm/v/@pansy/vue-watermark.svg
+[npm-vue-url]: http://npmjs.org/package/@pansy/vue-watermark
 [forks-image]: https://img.shields.io/github/forks/pansyjs/watermark.svg
 [stars-image]: https://img.shields.io/github/stars/pansyjs/watermark.svg
 [packagephobia-image]: https://packagephobia.com/badge?p=@pansy/watermark
-[npm-url]: http://npmjs.org/package/@pansy/watermark
 [github-url]: https://github.com/pansyjs/watermark
 [stars-url]: https://github.com/pansyjs/watermark/stargazers
 [forks-url]: https://github.com/pansyjs/watermark/network/members
