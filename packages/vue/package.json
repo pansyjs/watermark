@@ -32,6 +32,6 @@
     "access": "public"
   },
   "devDependencies": {
-    "vue": "^3.2.31"
+    "vue": "3.2.31"
   }
 }
