@@ -1,0 +1,13 @@
+
+**/*.png
+**/*.svg
+package.json
+.umi
+.umi-production
+lib/
+es/
+yarn.lock
+yarn-error.log
+.gitignore
+.npmignore
+
