@@ -12,12 +12,12 @@ import {
   Row,
   Col,
   Slider,
-  Divider
+  Divider,
 } from 'antd';
 import { defaultOptions } from '@pansy/watermark';
-import type { WatermarkOptions } from '@pansy/watermark'
+import type { WatermarkOptions } from '@pansy/watermark';
 import { ProFormColorPicker } from '@ant-design/pro-form';
-import { useClipboard } from "use-clipboard-hook";
+import { useClipboard } from 'use-clipboard-hook';
 import Watermark from '@pansy/react-watermark';
 import WatermarkContent from '../content';
 import styles from './index.less';
@@ -27,56 +27,53 @@ const { TextArea } = Input;
 export default () => {
   const [config, setConfig] = useState<WatermarkOptions>({
     ...defaultOptions,
-    text: '测试水印'
-  })
+    text: '测试水印',
+    blindText: '测试盲水印',
+  });
   const { copy } = useClipboard();
   const [form] = Form.useForm();
 
   const handleCopy = () => {
-    const copyText = Object.keys(config).reduce(
-      (prev, cur, index, list) => {
-        const val = typeof config[cur] === 'string' ? `'${config[cur]}'` : config[cur];
-        return prev + `  ${cur}: ${val},\n` + (index + 1  === list.length ? '}' : '')
-      },
-      'const watermarkConfig = {\n'
-    );
+    const copyText = Object.keys(config).reduce((prev, cur, index, list) => {
+      const val = typeof config[cur] === 'string' ? `'${config[cur]}'` : config[cur];
+      return prev + `  ${cur}: ${val},\n` + (index + 1 === list.length ? '}' : '');
+    }, 'const watermarkConfig = {\n');
     copy(copyText);
     message.success('拷贝成功');
-  }
+  };
 
-  const watermark = useMemo(
-    () => {
-      return (
-        <Watermark {...config}>
-          <WatermarkContent />
-        </Watermark>
-      )
-    },
-    [config]
-  );
+  const watermark = useMemo(() => {
+    return (
+      <Watermark {...config}>
+        <WatermarkContent />
+      </Watermark>
+    );
+  }, [config]);
 
   return (
     <div className={styles.main}>
       <ProCard split="vertical" headerBordered bordered>
-        <ProCard colSpan="70%">
-          {watermark}
-        </ProCard>
+        <ProCard colSpan="70%">{watermark}</ProCard>
         <ProCard
           title="配置面板"
-          extra={<Button type="link" size="small" onClick={handleCopy}>拷贝配置</Button>}
+          extra={
+            <Button type="link" size="small" onClick={handleCopy}>
+              拷贝配置
+            </Button>
+          }
         >
           <div style={{ overflow: 'scroll', height: 600 }}>
             <Form
               layout="vertical"
               initialValues={{
                 ...defaultOptions,
-                text: '测试水印'
+                text: '测试水印',
               }}
               form={form}
               onValuesChange={(_, allValues) => {
                 setConfig({
                   ...allValues,
-                  text: allValues.text.split('\n')
+                  text: allValues.text.split('\n'),
                 });
               }}
             >
@@ -95,13 +92,13 @@ export default () => {
                         {
                           label: '错行展示',
                           value: 'interval',
-                        }
+                        },
                       ]}
                     />
                   </Form.Item>
                 </Col>
                 <Col span={12}>
-                  <Form.Item name="monitor" valuePropName="checked" label="开启保护模式" >
+                  <Form.Item name="monitor" valuePropName="checked" label="开启保护模式">
                     <Switch />
                   </Form.Item>
                 </Col>
@@ -109,10 +106,7 @@ export default () => {
 
               <Divider dashed>水印内容</Divider>
 
-              <Form.Item
-                name="text"
-                label="水印文案"
-              >
+              <Form.Item name="text" label="水印文案">
                 <TextArea placeholder="请输入" />
               </Form.Item>
 
@@ -194,7 +188,7 @@ export default () => {
                     <Select
                       options={[
                         { value: 'normal', label: '正常' },
-                        { value: 'italic', label: '斜体' }
+                        { value: 'italic', label: '斜体' },
                       ]}
                     />
                   </Form.Item>
@@ -205,16 +199,16 @@ export default () => {
               </Row>
 
               <Form.Item name="fontFamily" label="字体">
-                <Input placeholder="请输入"/>
+                <Input placeholder="请输入" />
               </Form.Item>
 
               <Form.Item name="fontWeight" label="字体粗细">
-                <Input placeholder="请输入"/>
+                <Input placeholder="请输入" />
               </Form.Item>
             </Form>
           </div>
         </ProCard>
       </ProCard>
     </div>
-  )
-}
+  );
+};
