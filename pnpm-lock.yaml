@@ -89,13 +89,13 @@ importers:
 
   packages/react:
     specifiers:
-      '@pansy/watermark': 2.0.10
+      '@pansy/watermark': 2.1.0
     dependencies:
       '@pansy/watermark': link:../core
 
   packages/vue:
     specifiers:
-      '@pansy/watermark': ^2.0.10
+      '@pansy/watermark': 2.1.0
       vue: ^3.2.31
       vue-demi: ^0.12.5
     dependencies:
