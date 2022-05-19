@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.1.0](https://github.com/pansyjs/watermark/compare/@pansy/watermark@2.0.10...@pansy/watermark@2.1.0) (2022-05-19)
+
+
+### Features
+
+* init ([d3fd11f](https://github.com/pansyjs/watermark/commit/d3fd11fde95c3ea7aacd2c1760176a38c1d25cc5))
+* test ([f99bc79](https://github.com/pansyjs/watermark/commit/f99bc79647334a36119d6f1902a89581787ef5fc))
+* test ([89a1920](https://github.com/pansyjs/watermark/commit/89a192060c521768ab1956cd0df5c9bf1405836c))
+
+
+
+
+
 ## [2.0.10](https://github.com/pansyjs/watermark/compare/@pansy/watermark@2.0.9...@pansy/watermark@2.0.10) (2022-03-15)
 
 **Note:** Version bump only for package @pansy/watermark
