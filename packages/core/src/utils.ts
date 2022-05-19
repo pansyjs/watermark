@@ -96,7 +96,8 @@ export const getContainer = (
   return dom;
 };
 
-export const processData = (ctx: CanvasRenderingContext2D, originalData: ImageData) => {
+// 盲水印解密
+export const blindDecryption = (ctx: CanvasRenderingContext2D, originalData: ImageData) => {
   let data = originalData.data;
   for (let i = 0; i < data.length; i++) {
     //筛选每个像素点的R值
@@ -196,8 +197,6 @@ export function getDrawPattern(config: WatermarkOptions): Promise<DrawPatternRes
         img.src = image;
         img.onload = () => {
           ctx.drawImage(img, 0, 0, markWidth, markHeight);
-          const originalData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-          processData(ctx, originalData);
           resolve({
             url: ctx.canvas.toDataURL(),
             width: canvasWidth,
@@ -238,8 +237,6 @@ export function getDrawPattern(config: WatermarkOptions): Promise<DrawPatternRes
       for (let i = 0; i < texts.length; i++) {
         ctx.fillText(texts[i] || '', markWidth / 2, initY + lineHeight * i);
       }
-      const originalData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-      processData(ctx, originalData);
       resolve({
         url: ctx.canvas.toDataURL(),
         width: canvasWidth,

@@ -9,7 +9,7 @@ import {
 } from './utils';
 import { defaultOptions, attributeNameTag, observeOptions } from './config';
 import { WatermarkOptions } from './types';
-import { processData } from './utils';
+import { blindDecryption } from './utils';
 
 const MutationObserver = getMutationObserver();
 
@@ -259,4 +259,4 @@ export class Watermark {
 
 export { WatermarkOptions } from './types';
 export { defaultOptions } from './config';
-export { processData };
+export { blindDecryption };

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import WatermarkContent from '../../../../docs/components/content';
-import { processData, Watermark } from '@pansy/watermark';
+import { blindDecryption, Watermark } from '@pansy/watermark';
 import { Button } from 'antd';
 import html2canvas from 'html2canvas';
 
@@ -38,7 +38,7 @@ export default () => {
           const ctx = canvas.getContext('2d');
           if (ctx) {
             const originalData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
-            processData(ctx, originalData);
+            blindDecryption(ctx, originalData);
             setImage(canvas.toDataURL());
           }
         }}
