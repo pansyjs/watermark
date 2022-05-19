@@ -96,6 +96,30 @@ export const getContainer = (
   return dom;
 };
 
+export const processData = (ctx: CanvasRenderingContext2D, originalData: ImageData) => {
+  let data = originalData.data;
+  for (let i = 0; i < data.length; i++) {
+    //筛选每个像素点的R值
+    if (i % 4 == 0) {
+      if (data[i] % 2 == 0) {
+        //如果R值为偶数，说明这个点是没有水印信息的，将其R值设为0
+        data[i] = 0;
+      } else {
+        //如果R值为奇数，说明这个点是有水印信息的，将其R值设为255
+        data[i] = 255;
+      }
+    } else if (i % 4 == 3) {
+      //透明度不作处理
+      continue;
+    } else {
+      // G、B值设置为0，不影响
+      data[i] = 0;
+    }
+  }
+  // // 至此，带有水印信息的点都将展示为255,0,0   而没有水印信息的点将展示为0,0,0  将结果绘制到画布
+  ctx.putImageData(originalData, 0, 0);
+};
+
 export const getContent = (watermarkId: string) => {
   const dom = document.createElement('div');
   dom.setAttribute(
@@ -172,6 +196,8 @@ export function getDrawPattern(config: WatermarkOptions): Promise<DrawPatternRes
         img.src = image;
         img.onload = () => {
           ctx.drawImage(img, 0, 0, markWidth, markHeight);
+          const originalData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+          processData(ctx, originalData);
           resolve({
             url: ctx.canvas.toDataURL(),
             width: canvasWidth,
@@ -212,7 +238,8 @@ export function getDrawPattern(config: WatermarkOptions): Promise<DrawPatternRes
       for (let i = 0; i < texts.length; i++) {
         ctx.fillText(texts[i] || '', markWidth / 2, initY + lineHeight * i);
       }
-
+      const originalData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
+      processData(ctx, originalData);
       resolve({
         url: ctx.canvas.toDataURL(),
         width: canvasWidth,

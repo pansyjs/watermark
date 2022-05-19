@@ -5,6 +5,7 @@
   "author": "wangxingkang <156148958@qq.com>",
   "license": "MIT",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "start": "dumi dev",
     "example:vue2": "pnpm -r --filter vue2 run dev",
     "example:vue3": "pnpm -r --filter vue3 run dev",
@@ -29,6 +30,7 @@
     "@walrus/plugin-test": "1.1.0",
     "antd": "4.20.5",
     "dumi": "1.1.40",
+    "html2canvas": "^1.4.1",
     "lerna": "4.0.0",
     "prettier": "^2.6.2",
     "react": "17.0.2",

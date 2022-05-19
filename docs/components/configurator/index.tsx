@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useRef } from 'react';
 import ProCard from '@ant-design/pro-card';
 import {
   Button,
@@ -14,13 +14,14 @@ import {
   Slider,
   Divider,
 } from 'antd';
-import { defaultOptions } from '@pansy/watermark';
+import { defaultOptions, processData } from '@pansy/watermark';
 import type { WatermarkOptions } from '@pansy/watermark';
 import { ProFormColorPicker } from '@ant-design/pro-form';
 import { useClipboard } from 'use-clipboard-hook';
 import Watermark from '@pansy/react-watermark';
 import WatermarkContent from '../content';
 import styles from './index.less';
+import html2canvas from 'html2canvas';
 
 const { TextArea } = Input;
 
@@ -41,19 +42,18 @@ export default () => {
     copy(copyText);
     message.success('拷贝成功');
   };
-
-  const watermark = useMemo(() => {
-    return (
-      <Watermark {...config}>
-        <WatermarkContent />
-      </Watermark>
-    );
-  }, [config]);
+  const [image, setImage] = useState('');
 
   return (
     <div className={styles.main}>
       <ProCard split="vertical" headerBordered bordered>
-        <ProCard colSpan="70%">{watermark}</ProCard>
+        <ProCard colSpan="70%">
+          <div id="config-container">
+            <Watermark {...config} container="config-container">
+              <WatermarkContent />
+            </Watermark>
+          </div>
+        </ProCard>
         <ProCard
           title="配置面板"
           extra={
@@ -68,6 +68,7 @@ export default () => {
               initialValues={{
                 ...defaultOptions,
                 text: '测试水印',
+                blindText: '测试盲水印',
               }}
               form={form}
               onValuesChange={(_, allValues) => {
@@ -205,10 +206,43 @@ export default () => {
               <Form.Item name="fontWeight" label="字体粗细">
                 <Input placeholder="请输入" />
               </Form.Item>
+              <Form.Item name="blindText" label="盲水印文案">
+                <Input placeholder="请输入" />
+              </Form.Item>
+              <Form.Item name="blindOpacity" label="盲水印透明度">
+                <Input placeholder="请输入" />
+              </Form.Item>
+              <Form.Item label="盲水印解密">
+                <Button
+                  type="primary"
+                  onClick={async () => {
+                    const canvas = await html2canvas(
+                      document.querySelector('#config-container') as any,
+                      { useCORS: true },
+                    );
+                    console.log('canvas', canvas);
+                    const ctx = canvas.getContext('2d');
+                    if (ctx) {
+                      const originalData = ctx.getImageData(
+                        0,
+                        0,
+                        ctx.canvas.width,
+                        ctx.canvas.height,
+                      );
+                      processData(ctx, originalData);
+                      setImage(canvas.toDataURL());
+                    }
+                  }}
+                >
+                  解密
+                </Button>
+              </Form.Item>
             </Form>
           </div>
         </ProCard>
       </ProCard>
+
+      {image && <img height="100%" width="100%" src={image} />}
     </div>
   );
 };
