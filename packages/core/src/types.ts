@@ -36,13 +36,17 @@ export interface WatermarkOptions extends Partial<BaseOptions> {
   image?: string;
   /** 水印文本, 为数组时表示多行水印 */
   text?: string | string[];
+  /** 盲水印文本 */
+  blindText?: string;
+  /** 盲水印透明度 */
+  blindOpacity?: number;
   /** 样式层级 */
   zIndex?: number;
   /** 是否使用水印组件包裹内容  */
   pack?: boolean;
   /** 水印挂载的容器 */
   container?: HTMLElement | string | null;
-   /** 水印挂载的样式 */
+  /** 水印挂载的样式 */
   containerStyle?: Record<string, any>;
   /** 展示模式，interval表示错行展示 */
   mode?: 'repeat' | 'interval';

@@ -21,7 +21,8 @@ export const defaultOptions: Partial<WatermarkOptions> = {
   zIndex: 9999,
   mode: 'interval',
   pack: true,
-}
+  blindOpacity: 0.005,
+};
 
 /** 用于标记是否需要保护 */
 export const attributeNameTag = 'data-watermark-tag';
@@ -29,5 +30,5 @@ export const attributeNameTag = 'data-watermark-tag';
 export const observeOptions = {
   childList: true,
   subtree: true,
-  attributeFilter: ['style', attributeNameTag]
-}
+  attributeFilter: ['style', attributeNameTag],
+};
