@@ -43,6 +43,7 @@ export default () => {
     message.success('拷贝成功');
   };
   const [image, setImage] = useState('');
+  const [loading, setLoading] = useState(false);
 
   return (
     <div className={styles.main}>
@@ -215,12 +216,13 @@ export default () => {
               <Form.Item label="盲水印解密">
                 <Button
                   type="primary"
+                  loading={loading}
                   onClick={async () => {
+                    setLoading(true);
                     const canvas = await html2canvas(
                       document.querySelector('#config-container') as any,
-                      { useCORS: true },
                     );
-                    console.log('canvas', canvas);
+
                     const ctx = canvas.getContext('2d');
                     if (ctx) {
                       const originalData = ctx.getImageData(
@@ -232,6 +234,7 @@ export default () => {
                       blindDecryption(ctx, originalData);
                       setImage(canvas.toDataURL());
                     }
+                    setLoading(false);
                   }}
                 >
                   解密
