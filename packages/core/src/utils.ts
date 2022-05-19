@@ -127,7 +127,9 @@ export function getDrawPattern(config: WatermarkOptions): Promise<DrawPatternRes
     fontFamily,
     fontColor,
     textAlign,
+    textBaseline,
     image,
+    blindText,
   } = config as Required<WatermarkOptions>;
   return new Promise((resolve, reject) => {
     const canvas = document.createElement('canvas');
@@ -147,11 +149,19 @@ export function getDrawPattern(config: WatermarkOptions): Promise<DrawPatternRes
       const markWidth = width * ratio;
       const markHeight = height * ratio;
 
-      // 设置透明度
-      ctx.globalAlpha = opacity;
-
       ctx.translate(canvasOffsetLeft * ratio, canvasOffsetTop * ratio);
       ctx.rotate((Math.PI / 180) * Number(rotate));
+
+      // 是否需要增加盲水印文字
+      if (blindText) {
+        // 盲水印需要低透明度
+        ctx.globalAlpha = 0.005;
+        ctx.font = '14px normal';
+        ctx.fillText(blindText, 0, 0);
+      }
+
+      // 设置透明度
+      ctx.globalAlpha = opacity;
 
       // 优先使用图片
       if (image) {
@@ -179,6 +189,8 @@ export function getDrawPattern(config: WatermarkOptions): Promise<DrawPatternRes
 
       // 设置文本对齐方式
       ctx.textAlign = textAlign;
+      // 设置文本位置
+      ctx.textBaseline = textBaseline;
       // 设置字体颜色
       ctx.fillStyle = fontColor;
       // 设置字体
