@@ -1,4 +1,4 @@
-import { useState, useMemo, useRef } from 'react';
+import { useState } from 'react';
 import ProCard from '@ant-design/pro-card';
 import {
   Button,
@@ -14,7 +14,7 @@ import {
   Slider,
   Divider,
 } from 'antd';
-import { defaultOptions, processData } from '@pansy/watermark';
+import { defaultOptions, blindDecryption } from '@pansy/watermark';
 import type { WatermarkOptions } from '@pansy/watermark';
 import { ProFormColorPicker } from '@ant-design/pro-form';
 import { useClipboard } from 'use-clipboard-hook';
@@ -229,7 +229,7 @@ export default () => {
                         ctx.canvas.width,
                         ctx.canvas.height,
                       );
-                      processData(ctx, originalData);
+                      blindDecryption(ctx, originalData);
                       setImage(canvas.toDataURL());
                     }
                   }}
