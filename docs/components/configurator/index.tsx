@@ -221,6 +221,7 @@ export default () => {
                     setLoading(true);
                     const canvas = await html2canvas(
                       document.querySelector('#config-container') as any,
+                      { useCORS: true },
                     );
 
                     const ctx = canvas.getContext('2d');
