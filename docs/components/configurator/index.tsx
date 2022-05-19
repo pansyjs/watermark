@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ProCard from '@ant-design/pro-card';
 import {
   Button,
@@ -43,17 +43,24 @@ export default () => {
     message.success('拷贝成功');
   };
   const [image, setImage] = useState('');
-  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    // 为了解决第一次转 canvas CORS 时间过长，需要初始化执行一次
+    html2canvas(document.querySelector('#config-container') as any, { useCORS: true });
+  }, []);
 
   return (
     <div className={styles.main}>
       <ProCard split="vertical" headerBordered bordered>
         <ProCard colSpan="70%">
-          <div id="config-container">
-            <Watermark {...config} container="config-container">
-              <WatermarkContent />
-            </Watermark>
-          </div>
+          {image ? (
+            <img height="100%" width="100%" src={image} />
+          ) : (
+            <div id="config-container">
+              <Watermark {...config} container="config-container">
+                <WatermarkContent />
+              </Watermark>
+            </div>
+          )}
         </ProCard>
         <ProCard
           title="配置面板"
@@ -214,33 +221,32 @@ export default () => {
                 <Input placeholder="请输入" />
               </Form.Item>
               <Form.Item label="盲水印解密">
-                <Button
-                  type="primary"
-                  loading={loading}
-                  onClick={async () => {
-                    setLoading(true);
-                    const canvas = await html2canvas(
-                      document.querySelector('#config-container') as any,
-                      { useCORS: true },
-                    );
-                    const ctx = canvas.getContext('2d');
-                    if (ctx) {
-                      // 处理像素解密盲水印
-                      blindDecryption(ctx);
-                      setImage(canvas.toDataURL());
-                    }
-                    setLoading(false);
-                  }}
-                >
-                  解密
-                </Button>
+                {image ? (
+                  <Button onClick={() => setImage('')}>恢复</Button>
+                ) : (
+                  <Button
+                    type="primary"
+                    onClick={async () => {
+                      const canvas = await html2canvas(
+                        document.querySelector('#config-container') as any,
+                        { useCORS: true },
+                      );
+                      const ctx = canvas.getContext('2d');
+                      if (ctx) {
+                        // 处理像素解密盲水印
+                        blindDecryption(ctx);
+                        setImage(canvas.toDataURL());
+                      }
+                    }}
+                  >
+                    解密
+                  </Button>
+                )}
               </Form.Item>
             </Form>
           </div>
         </ProCard>
       </ProCard>
-
-      {image && <img height="100%" width="100%" src={image} />}
     </div>
   );
 };
