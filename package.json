@@ -15,26 +15,26 @@
     "release": "walrus release"
   },
   "devDependencies": {
-    "@ant-design/pro-card": "1.19.2",
-    "@ant-design/pro-form": "1.62.1",
+    "@ant-design/pro-card": "1.20.4",
+    "@ant-design/pro-form": "1.68.0",
     "@pansy/react-watermark": "workspace:*",
     "@pansy/vue-watermark": "workspace:*",
     "@pansy/watermark": "workspace:*",
     "@types/react": "^17",
     "@types/react-dom": "^17",
     "@umijs/plugin-antd": "0.15.0",
-    "@umijs/utils": "3.5.21",
+    "@umijs/utils": "3.5.23",
     "@walrus/cli": "1.3.4",
     "@walrus/plugin-release": "1.14.3",
     "@walrus/plugin-test": "1.1.0",
-    "antd": "4.19.5",
+    "antd": "4.20.5",
     "dumi": "1.1.40",
     "lerna": "4.0.0",
     "prettier": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "tsup": "5.12.4",
-    "typescript": "4.6.3",
+    "tsup": "5.12.8",
+    "typescript": "4.6.4",
     "use-clipboard-hook": "1.1.1"
   }
 }
