@@ -97,7 +97,8 @@ export const getContainer = (
 };
 
 // 盲水印解密
-export const blindDecryption = (ctx: CanvasRenderingContext2D, originalData: ImageData) => {
+export const blindDecryption = (ctx: CanvasRenderingContext2D) => {
+  const originalData = ctx.getImageData(0, 0, ctx.canvas.width, ctx.canvas.height);
   let data = originalData.data;
   for (let i = 0; i < data.length; i++) {
     //筛选每个像素点的R值

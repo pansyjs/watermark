@@ -223,16 +223,10 @@ export default () => {
                       document.querySelector('#config-container') as any,
                       { useCORS: true },
                     );
-
                     const ctx = canvas.getContext('2d');
                     if (ctx) {
-                      const originalData = ctx.getImageData(
-                        0,
-                        0,
-                        ctx.canvas.width,
-                        ctx.canvas.height,
-                      );
-                      blindDecryption(ctx, originalData);
+                      // 处理像素解密盲水印
+                      blindDecryption(ctx);
                       setImage(canvas.toDataURL());
                     }
                     setLoading(false);
