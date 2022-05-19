@@ -6,13 +6,10 @@ import {
   getContent,
   getDataSetKey,
   getMutationObserver,
-}  from './utils';
-import {
-  defaultOptions,
-  attributeNameTag,
-  observeOptions,
-} from './config';
+} from './utils';
+import { defaultOptions, attributeNameTag, observeOptions } from './config';
 import { WatermarkOptions } from './types';
+import { blindDecryption } from './utils';
 
 const MutationObserver = getMutationObserver();
 
@@ -42,8 +39,8 @@ export class Watermark {
       pointerEvents: 'none',
       overflow: 'hidden',
       backgroundColor: 'transparent',
-      backgroundRepeat: 'repeat'
-    }
+      backgroundRepeat: 'repeat',
+    };
     this.style.zIndex = this.options.zIndex;
     this.watermarkTag = getRandomId('watermark');
     this.mutationObserver = null;
@@ -58,7 +55,7 @@ export class Watermark {
   update(options: WatermarkOptions = {}) {
     this.options = {
       ...this.options,
-      ...options
+      ...options,
     };
     this.style.zIndex = this.options.zIndex;
 
@@ -128,11 +125,11 @@ export class Watermark {
     }
 
     return false;
-  }
+  };
 
   _getNodeRandomId = (node: Node) => {
     return node?.['dataset']?.[getDataSetKey(attributeNameTag)];
-  }
+  };
 
   /**
    * 销毁MutationObserver
@@ -143,7 +140,7 @@ export class Watermark {
       this.mutationObserver.disconnect();
       this.mutationObserver = null;
     }
-  }
+  };
 
   /**
    * 获取水印节点
@@ -168,7 +165,9 @@ export class Watermark {
       } else {
         this.style.backgroundImage = `url(${background}), url(${background})`;
         this.style.backgroundRepeat = 'repeat, repeat';
-        this.style.backgroundPosition = `${backgroundConfig.width / 2}px ${backgroundConfig.height / 2}px, 0 0`;
+        this.style.backgroundPosition = `${backgroundConfig.width / 2}px ${
+          backgroundConfig.height / 2
+        }px, 0 0`;
       }
       // 直接挂载在到body
       if (!this.options.container) {
@@ -181,7 +180,7 @@ export class Watermark {
     this.watermarkDom.setAttribute(attributeNameTag, this.watermarkTag);
 
     return this.watermarkDom;
-  }
+  };
 
   _getWatermarkHeight = () => {
     if (!this.container) return 0;
@@ -189,15 +188,15 @@ export class Watermark {
     let height = 0;
 
     const { scrollHeight = 0, clientHeight = 0 }: HTMLElement = this.options.container
-      ? this.container.parentNode as HTMLElement
-      : this.container
+      ? (this.container.parentNode as HTMLElement)
+      : this.container;
 
     if (scrollHeight > clientHeight) {
       height = Math.max(scrollHeight, clientHeight);
     }
 
     return height;
-  }
+  };
 
   async _render() {
     this._destroyMutationObserver();
@@ -207,7 +206,7 @@ export class Watermark {
       this.options.container,
       this.watermarkTag,
       this.options.containerStyle,
-      this.options.pack
+      this.options.pack,
     );
     // 获取水印父节点
     if (!this.watermarkContent) {
@@ -233,7 +232,7 @@ export class Watermark {
     if (typeof this.watermarkContent.attachShadow === 'function') {
       if (!this.shadowRoot) {
         this.shadowRoot = this.watermarkContent.attachShadow({
-          mode: 'open'
+          mode: 'open',
         });
       }
     } else {
@@ -243,14 +242,14 @@ export class Watermark {
     this.shadowRoot.append(this.watermarkDom);
 
     if (MutationObserver && this.options.monitor) {
-      this.mutationObserver = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
+      this.mutationObserver = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
           if (this._isAgainRender(mutation)) {
             this.destroy();
             this._render();
             return;
           }
-        })
+        });
       });
       this.mutationObserver.observe(this.container, observeOptions);
       this.shadowRoot && this.mutationObserver.observe(this.shadowRoot, observeOptions);
@@ -260,3 +259,4 @@ export class Watermark {
 
 export { WatermarkOptions } from './types';
 export { defaultOptions } from './config';
+export { blindDecryption };
