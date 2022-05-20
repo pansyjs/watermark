@@ -32,6 +32,7 @@ export default () => {
           accept="image/*"
           showUploadList={false}
           onChange={async ({ file }) => {
+            setDecryptionImage('');
             if (file.originFileObj) {
               const base64 = await getBase64(file.originFileObj);
               setImage(base64);
