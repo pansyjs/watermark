@@ -21,7 +21,7 @@ export const defaultOptions: Partial<WatermarkOptions> = {
   zIndex: 9999,
   mode: 'interval',
   pack: true,
-  blindFontSize: 16,
+  blindFontSize: '16px',
   blindOpacity: 0.005,
 };
 
