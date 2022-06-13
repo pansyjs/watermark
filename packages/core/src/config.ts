@@ -31,5 +31,5 @@ export const attributeNameTag = 'data-watermark-tag';
 export const observeOptions = {
   childList: true,
   subtree: true,
-  attributeFilter: ['style', attributeNameTag],
+  attributeFilter: ['style', 'class', attributeNameTag],
 };
