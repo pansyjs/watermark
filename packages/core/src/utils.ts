@@ -156,6 +156,7 @@ export function getDrawPattern(config: WatermarkOptions): Promise<DrawPatternRes
     textBaseline,
     image,
     blindText,
+    blindFontSize,
     blindOpacity,
   } = config as Required<WatermarkOptions>;
   return new Promise((resolve, reject) => {
@@ -183,7 +184,7 @@ export function getDrawPattern(config: WatermarkOptions): Promise<DrawPatternRes
       if (blindText) {
         // 盲水印需要低透明度
         ctx.globalAlpha = blindOpacity;
-        ctx.font = '14px normal';
+        ctx.font = `${blindFontSize}px normal`;
         ctx.fillText(blindText, 0, 0);
       }
 
