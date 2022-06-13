@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.2.1](https://github.com/pansyjs/watermark/compare/@pansy/watermark@2.2.0...@pansy/watermark@2.2.1) (2022-06-13)
+
+
+### Bug Fixes
+
+* 修复类型错误 ([e897ab6](https://github.com/pansyjs/watermark/commit/e897ab6ae15bf2ccc9178fd8b0e53e568158c6b0))
+
+
+
+
+
 # [2.2.0](https://github.com/pansyjs/watermark/compare/@pansy/watermark@2.1.0...@pansy/watermark@2.2.0) (2022-06-13)
 
 
