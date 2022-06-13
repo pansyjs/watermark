@@ -39,7 +39,7 @@ export interface WatermarkOptions extends Partial<BaseOptions> {
   /** 盲水印文本 */
   blindText?: string;
   /** 盲水印文本大小 */
-  blindFontSize?: string;
+  blindFontSize?: string | number;
   /** 盲水印透明度 */
   blindOpacity?: number;
   /** 样式层级 */
