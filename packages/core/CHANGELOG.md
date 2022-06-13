@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.2.0](https://github.com/pansyjs/watermark/compare/@pansy/watermark@2.1.0...@pansy/watermark@2.2.0) (2022-06-13)
+
+
+### Bug Fixes
+
+* [#112](https://github.com/pansyjs/watermark/issues/112) ([fb5ae76](https://github.com/pansyjs/watermark/commit/fb5ae76a85f3a893ae6a490ebe6b96bff6148c23))
+* 修复类型报错 ([40a62c4](https://github.com/pansyjs/watermark/commit/40a62c42efea6c539bb01abc9532b82fb83a05d4))
+
+
+### Features
+
+* 添加盲水印 demo and 文档 ([0e9651b](https://github.com/pansyjs/watermark/commit/0e9651b91759f10cbdf3a5a56083f7b0f43a56b6))
+* 添加文字大小配置 ([68de3c5](https://github.com/pansyjs/watermark/commit/68de3c56bc0475eb7f88c13328c9897b87b4cbe9))
+* api ([ee078d8](https://github.com/pansyjs/watermark/commit/ee078d809d935d6535ee3df01898b075a62d53b5))
+* rename ([c2b126e](https://github.com/pansyjs/watermark/commit/c2b126e0560eaf784ddc6456e627a6c144a25486))
+* test ([7f8607f](https://github.com/pansyjs/watermark/commit/7f8607ffd6eafcf240bb845917fc51a411e79550))
+
+
+
+
+
 # [2.1.0](https://github.com/pansyjs/watermark/compare/@pansy/watermark@2.0.10...@pansy/watermark@2.1.0) (2022-05-19)
 
 
