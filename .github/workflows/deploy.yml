@@ -37,7 +37,7 @@ jobs:
           run_install: true
 
       - name: Build
-        run: pnpm site
+        run: pnpm build:site
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
