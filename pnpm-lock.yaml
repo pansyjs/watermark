@@ -78,16 +78,16 @@ importers:
       '@pansy/vue-watermark': workspace:*
       '@vitejs/plugin-vue': ^2.3.1
       typescript: ^4.8.2
-      vite: ^2.9.0
+      vite: ^3.1.0
       vue: ^3.2.31
       vue-tsc: ^0.33.9
     dependencies:
       '@pansy/vue-watermark': link:../../packages/vue
       vue: 3.2.39
     devDependencies:
-      '@vitejs/plugin-vue': 2.3.4_vite@2.9.15+vue@3.2.39
+      '@vitejs/plugin-vue': 2.3.4_vite@3.1.0+vue@3.2.39
       typescript: 4.8.2
-      vite: 2.9.15
+      vite: 3.1.0
       vue-tsc: 0.33.9_typescript@4.8.2
 
   packages/core:
@@ -6908,14 +6908,14 @@ packages:
     hasBin: true
     dev: true
 
-  /@vitejs/plugin-vue/2.3.4_vite@2.9.15+vue@3.2.39:
+  /@vitejs/plugin-vue/2.3.4_vite@3.1.0+vue@3.2.39:
     resolution: {integrity: sha512-IfFNbtkbIm36O9KB8QodlwwYvTEsJb4Lll4c2IwB3VHc2gie2mSPtSzL0eYay7X2jd/2WX02FjSGTWR6OPr/zg==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.9.15
+      vite: 3.1.0
       vue: 3.2.39
     dev: true
 
@@ -20616,8 +20616,8 @@ packages:
       inherits: 2.0.4
     dev: true
 
-  /rollup/2.77.3:
-    resolution: {integrity: sha512-/qxNTG7FbmefJWoeeYJFbHehJ2HNWnjkAFRKzWN/45eNBBF/r8lo992CwcJXEzyVxs5FmfId+vTSTQDb+bxA+g==}
+  /rollup/2.78.1:
+    resolution: {integrity: sha512-VeeCgtGi4P+o9hIg+xz4qQpRl6R401LWEXBmxYKOV4zlF82lyhgh2hTZnheFUbANE8l2A41F458iwj2vEYaXJg==}
     engines: {node: '>=10.0.0'}
     hasBin: true
     optionalDependencies:
@@ -22734,14 +22734,15 @@ packages:
       vfile-message: 2.0.4
     dev: true
 
-  /vite/2.9.15:
-    resolution: {integrity: sha512-fzMt2jK4vQ3yK56te3Kqpkaeq9DkcZfBbzHwYpobasvgYmP2SoAr6Aic05CsB4CzCZbsDv4sujX3pkEGhLabVQ==}
-    engines: {node: '>=12.2.0'}
+  /vite/3.1.0:
+    resolution: {integrity: sha512-YBg3dUicDpDWFCGttmvMbVyS9ydjntwEjwXRj2KBFwSB8SxmGcudo1yb8FW5+M/G86aS8x828ujnzUVdsLjs9g==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
       less: '*'
       sass: '*'
       stylus: '*'
+      terser: ^5.4.0
     peerDependenciesMeta:
       less:
         optional: true
@@ -22749,11 +22750,13 @@ packages:
         optional: true
       stylus:
         optional: true
+      terser:
+        optional: true
     dependencies:
-      esbuild: 0.14.54
+      esbuild: 0.15.7
       postcss: 8.4.16
       resolve: 1.22.1
-      rollup: 2.77.3
+      rollup: 2.78.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true

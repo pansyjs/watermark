@@ -1,6 +1,5 @@
 {
-  "name": "vue2",
-  "version": "0.1.0",
+  "name": "@example/vue2",
   "private": true,
   "scripts": {
     "dev": "vue-cli-service serve",
@@ -16,10 +15,5 @@
     "@vue/cli-service": "~5.0.4",
     "typescript": "~4.8.2",
     "vue-template-compiler": "^2.6.14"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  }
 }
