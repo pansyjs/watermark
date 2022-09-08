@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@pansy/watermark": "2.2.1",
-    "vue-demi": "^0.13.11"
+    "vue-demi": "*"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
