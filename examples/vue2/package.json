@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node ./bin/fix.js && vue-cli-service serve",
+    "dev": "vue-cli-service serve",
     "build:vue": "vue-cli-service build"
   },
   "dependencies": {
@@ -12,9 +12,9 @@
     "vue": "^2.7.10"
   },
   "devDependencies": {
-    "@vue/cli-plugin-typescript": "~4.4.6",
-    "@vue/cli-service": "~4.4.6",
-    "typescript": "~3.9.7",
+    "@vue/cli-plugin-typescript": "~5.0.4",
+    "@vue/cli-service": "~5.0.4",
+    "typescript": "~4.8.2",
     "vue-template-compiler": "^2.6.14"
   },
   "browserslist": [
