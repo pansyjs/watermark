@@ -10,6 +10,7 @@
     "@types/react-dom",
     "react",
     "react-dom",
-    "vue"
+    "vue",
+    "@umijs/utils"
   ]
 }
