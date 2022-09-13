@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/pansyjs/watermark/compare/@pansy/vue-watermark@1.1.3...@pansy/vue-watermark@1.2.0) (2022-09-13)
+
+
+### Features
+
+* add vue2/3 ([191f4af](https://github.com/pansyjs/watermark/commit/191f4af0ec0ad992a7795b2e5f75589bc22fad61))
+
+
+
+
+
 ## [1.1.3](https://github.com/pansyjs/watermark/compare/@pansy/vue-watermark@1.1.2...@pansy/vue-watermark@1.1.3) (2022-06-13)
 
 **Note:** Version bump only for package @pansy/vue-watermark
