@@ -243,13 +243,18 @@ export class Watermark {
 
     if (MutationObserver && this.options.monitor) {
       this.mutationObserver = new MutationObserver(mutations => {
+        // 避免多次执行render函数，导致多次注册MutationObserver 从而进入死循环逻辑
+        let lastMoutation;
         mutations.forEach(mutation => {
           if (this._isAgainRender(mutation)) {
-            this.destroy();
-            this._render();
+            lastMoutation = mutation;
             return;
           }
         });
+        if(lastMoutation){
+          this.destroy();
+          this._render();
+        }
       });
       this.mutationObserver.observe(this.container, observeOptions);
       this.shadowRoot && this.mutationObserver.observe(this.shadowRoot, observeOptions);
