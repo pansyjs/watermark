@@ -11,7 +11,7 @@ importers:
       '@pansy/watermark': workspace:*
       '@types/react': ^18.0.18
       '@types/react-dom': ^18.0.6
-      '@umijs/babel-preset-umi': 3.5.30
+      '@umijs/babel-preset-umi': 3.5.41
       '@umijs/plugin-antd': 0.15.2
       '@umijs/utils': 3.5.30
       '@walrus/cli': 1.3.4
@@ -36,7 +36,7 @@ importers:
       '@pansy/watermark': link:packages/core
       '@types/react': 18.0.18
       '@types/react-dom': 18.0.6
-      '@umijs/babel-preset-umi': 3.5.30
+      '@umijs/babel-preset-umi': 3.5.41
       '@umijs/plugin-antd': 0.15.2_biqbaboplfbrettd7655fr4n2y
       '@umijs/utils': 3.5.30
       '@walrus/cli': 1.3.4
@@ -95,15 +95,15 @@ importers:
 
   packages/react:
     specifiers:
-      '@pansy/watermark': 2.2.1
+      '@pansy/watermark': 2.3.0
     dependencies:
       '@pansy/watermark': link:../core
 
   packages/vue:
     specifiers:
-      '@pansy/watermark': 2.2.1
+      '@pansy/watermark': 2.3.0
       vue: ^3.2.31
-      vue-demi: ^0.13.11
+      vue-demi: '*'
     dependencies:
       '@pansy/watermark': link:../core
       vue-demi: 0.13.11_vue@3.2.39
@@ -2660,7 +2660,7 @@ packages:
   /@babel/runtime/7.11.2:
     resolution: {integrity: sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==}
     dependencies:
-      regenerator-runtime: 0.13.7
+      regenerator-runtime: 0.13.9
     dev: true
 
   /@babel/runtime/7.18.6:
@@ -4970,7 +4970,7 @@ packages:
       lru-cache: 6.0.0
       mkdirp: 1.0.4
       npm-pick-manifest: 6.1.1
-      promise-inflight: 1.0.1_bluebird@3.7.2
+      promise-inflight: 1.0.1
       promise-retry: 2.0.1
       semver: 7.3.7
       which: 2.0.2
@@ -6319,22 +6319,16 @@ packages:
       '@umijs/utils': 3.5.34
     dev: true
 
-  /@umijs/babel-plugin-auto-css-modules/3.5.30:
-    resolution: {integrity: sha512-XFg5j8uSg7718Xg8EQ6Myauvs9fGrs6LUH9P/0eEY9Mrshh84VCMbUoSRmpmyEgGC4N1+f053P5XffRhFv3XDA==}
-    dependencies:
-      '@umijs/utils': 3.5.30
-    dev: true
-
   /@umijs/babel-plugin-auto-css-modules/3.5.34:
     resolution: {integrity: sha512-2Sqw8VdGPVt4wZL5XZfv+qaabWJ/F/rlsVhfoxf7OKvlIjLU2gDipfQFCa5z6wKJTlUwwB5mUJgXJZHDAduqKQ==}
     dependencies:
       '@umijs/utils': 3.5.34
     dev: true
 
-  /@umijs/babel-plugin-import-to-await-require/3.5.30:
-    resolution: {integrity: sha512-VtOLFsv5tWpwhWkJqg+TXNAMpI2+wqhQ7g/3ScMhD2JakZv5RiUWWTd4lYEfWTrvyXDKID+8VQjwz4+bJpydWQ==}
+  /@umijs/babel-plugin-auto-css-modules/3.5.41:
+    resolution: {integrity: sha512-8iUcSFyLwRcRBsTW6hHuzDWX9Np+0AXqsFN08fnPI1P7zD4CSZWBLkjLz+zl4X8vakaPbqZy346KHoukbvEcew==}
     dependencies:
-      '@umijs/utils': 3.5.30
+      '@umijs/utils': 3.5.41
     dev: true
 
   /@umijs/babel-plugin-import-to-await-require/3.5.34:
@@ -6343,11 +6337,10 @@ packages:
       '@umijs/utils': 3.5.34
     dev: true
 
-  /@umijs/babel-plugin-lock-core-js-3/3.5.30:
-    resolution: {integrity: sha512-r271JioTs9TJLnI1gDEc+UH5BzbA5061xrBr9l95zSIj50oSbxVFq8ZHAk+JgTATdS9+PmE76LlvimouxLr30A==}
+  /@umijs/babel-plugin-import-to-await-require/3.5.41:
+    resolution: {integrity: sha512-xn9JhFc/vz/itTaLKC4NX4qcGfsBQQN03Kp8Bt5irXtp3CeBfeYFHjwcZ4TE4SJDTjka2wOR4RhmV3CJ2NZrQQ==}
     dependencies:
-      '@umijs/utils': 3.5.30
-      core-js: 3.6.5
+      '@umijs/utils': 3.5.41
     dev: true
 
   /@umijs/babel-plugin-lock-core-js-3/3.5.34:
@@ -6357,10 +6350,11 @@ packages:
       core-js: 3.6.5
     dev: true
 
-  /@umijs/babel-plugin-no-anonymous-default-export/3.5.30:
-    resolution: {integrity: sha512-0Ghir4GDB4a6ecPmlHDDoK1Fx1njG0kJWNPKPrgfsQQ+gZvDouTsJY+w9fNqzFGkXKudDcsqdUS5gRD+BOdFQw==}
+  /@umijs/babel-plugin-lock-core-js-3/3.5.41:
+    resolution: {integrity: sha512-+h47NI5u4YLA46iDv5TMPXtZWactlPgFYeMotrsxyW3R6QiUyX8oMF2UroT4lhbhcrf7GHe4n7jQH3TllgFL6Q==}
     dependencies:
-      '@umijs/utils': 3.5.30
+      '@umijs/utils': 3.5.41
+      core-js: 3.6.5
     dev: true
 
   /@umijs/babel-plugin-no-anonymous-default-export/3.5.34:
@@ -6369,16 +6363,10 @@ packages:
       '@umijs/utils': 3.5.34
     dev: true
 
-  /@umijs/babel-preset-umi/3.5.30:
-    resolution: {integrity: sha512-CY//HVsqu1kmKDBAXo5vPKouGvCeDBZ5hgnrgaqvkEs5XZf/CaOkNZ9I/SQnEybTY64WQqpaBWmeIBOO2R0SyQ==}
+  /@umijs/babel-plugin-no-anonymous-default-export/3.5.41:
+    resolution: {integrity: sha512-uUoLNUsRcITEYW+ap8+OAjUYQS606Ob8YxqYCq0ZL4SktxjP5CDMabqrJ6CatWKjjpNvq2A6KPLJKA7/9/fwFA==}
     dependencies:
-      '@babel/runtime': 7.18.6
-      '@umijs/babel-plugin-auto-css-modules': 3.5.30
-      '@umijs/babel-plugin-import-to-await-require': 3.5.30
-      '@umijs/babel-plugin-lock-core-js-3': 3.5.30
-      '@umijs/babel-plugin-no-anonymous-default-export': 3.5.30
-      '@umijs/deps': 3.5.30
-      '@umijs/utils': 3.5.30
+      '@umijs/utils': 3.5.41
     dev: true
 
   /@umijs/babel-preset-umi/3.5.34:
@@ -6391,6 +6379,18 @@ packages:
       '@umijs/babel-plugin-no-anonymous-default-export': 3.5.34
       '@umijs/deps': 3.5.34
       '@umijs/utils': 3.5.34
+    dev: true
+
+  /@umijs/babel-preset-umi/3.5.41:
+    resolution: {integrity: sha512-roKx1FWjqGtuqQazfceBVJrJNdiGRRiBgnthZtGujLWIec4iB5uliwvzmCunuw18l3MvLwkDEBhaRdMM0Ij3Dg==}
+    dependencies:
+      '@babel/runtime': 7.18.6
+      '@umijs/babel-plugin-auto-css-modules': 3.5.41
+      '@umijs/babel-plugin-import-to-await-require': 3.5.41
+      '@umijs/babel-plugin-lock-core-js-3': 3.5.41
+      '@umijs/babel-plugin-no-anonymous-default-export': 3.5.41
+      '@umijs/deps': 3.5.41
+      '@umijs/utils': 3.5.41
     dev: true
 
   /@umijs/babel-preset-umi/4.0.18:
@@ -6589,6 +6589,19 @@ packages:
       regenerate-unicode-properties: 10.0.1
     dev: true
 
+  /@umijs/deps/3.5.41:
+    resolution: {integrity: sha512-bMozsu97L0HJMoRtCevi81XvZ+nkJw2WMAlQuHnl5DsFYon9M+WljG88T/FX/x+lYfgdGY+fOuvcKWEazfA3SA==}
+    dependencies:
+      '@bloomberg/record-tuple-polyfill': 0.0.3
+      chokidar: 3.5.1
+      clipboardy: 2.3.0
+      esbuild: 0.12.15
+      jest-worker: 24.9.0
+      prettier: 2.2.1
+      regenerate: 1.4.2
+      regenerate-unicode-properties: 10.0.1
+    dev: true
+
   /@umijs/mfsu/4.0.18:
     resolution: {integrity: sha512-R0czq9mqV68MJj50bFQP/pXr0l91ESZA+R92Mlb7ok38OIIJbxydK4Fkx2MgLxD3EprZGb8NL6Ma5F/hwFTR3A==}
     dependencies:
@@ -6668,7 +6681,7 @@ packages:
       '@babel/traverse': 7.19.0
       '@babel/types': 7.19.0
       '@mapbox/hast-util-to-jsx': 1.0.0
-      '@umijs/babel-preset-umi': 3.5.30
+      '@umijs/babel-preset-umi': 3.5.41
       '@umijs/core': 3.5.34
       '@umijs/plugin-analytics': 0.2.3_umi@3.5.34
       '@umijs/runtime': 3.5.34_react@18.2.0
@@ -6887,6 +6900,13 @@ packages:
     dependencies:
       '@umijs/babel-preset-umi': 3.5.34
       '@umijs/deps': 3.5.34
+    dev: true
+
+  /@umijs/utils/3.5.41:
+    resolution: {integrity: sha512-htBGGUfVUlEv5j9hUZ0tmVa9Jj1Z3vhFsUNKl2Luw7hWqTv86prWKPEcG2FWOjTTmE8iSK6r4dHmBSlSC5P6Tw==}
+    dependencies:
+      '@umijs/babel-preset-umi': 3.5.41
+      '@umijs/deps': 3.5.41
     dev: true
 
   /@umijs/utils/4.0.0-beta.14:
@@ -8251,7 +8271,7 @@ packages:
     resolution: {integrity: sha512-bHU8m0SrY89ub2hBBuYjbennOeH0YUYkVpH6jxKFk0uD8rhN+0jNHIPtXnac+Vn7N/hgkLGGDcIoYK7je3Hhew==}
     dependencies:
       '@babel/helper-module-imports': 7.18.6
-      '@babel/runtime': 7.11.2
+      '@babel/runtime': 7.19.0
     dev: true
 
   /babel-plugin-istanbul/6.1.1:
@@ -8766,7 +8786,7 @@ packages:
       minipass-pipeline: 1.2.4
       mkdirp: 1.0.4
       p-map: 4.0.0
-      promise-inflight: 1.0.1_bluebird@3.7.2
+      promise-inflight: 1.0.1
       rimraf: 3.0.2
       ssri: 8.0.1
       tar: 6.1.11
@@ -20243,7 +20263,7 @@ packages:
   /regenerator-transform/0.15.0:
     resolution: {integrity: sha512-LsrGtPmbYg19bcPHwdtmXwbW+TqNvtY4riE3P83foeHRroMbH6/2ddFBfab3t7kbzc7v7p4wbkIecHImqt0QNg==}
     dependencies:
-      '@babel/runtime': 7.11.2
+      '@babel/runtime': 7.19.0
     dev: true
 
   /regex-not/1.0.2:
