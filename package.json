@@ -23,7 +23,7 @@
     "@types/react-dom": "^18.0.6",
     "@umijs/plugin-antd": "0.15.2",
     "@umijs/utils": "3.5.30",
-    "@umijs/babel-preset-umi": "3.5.30",
+    "@umijs/babel-preset-umi": "4.1.5",
     "@walrus/cli": "1.3.4",
     "@walrus/plugin-release": "1.14.3",
     "@walrus/plugin-test": "1.1.0",
