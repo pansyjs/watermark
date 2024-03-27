@@ -14,7 +14,7 @@
     "release": "walrus release"
   },
   "devDependencies": {
-    "@ant-design/pro-card": "1.20.9",
+    "@ant-design/pro-card": "2.6.0",
     "@ant-design/pro-form": "1.69.3",
     "@pansy/react-watermark": "workspace:*",
     "@pansy/vue-watermark": "workspace:*",
