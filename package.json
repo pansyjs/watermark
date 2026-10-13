@@ -28,7 +28,7 @@
     "@walrus/plugin-release": "1.14.3",
     "@walrus/plugin-test": "1.1.0",
     "antd": "4.23.0",
-    "dumi": "1.1.47",
+    "dumi": "1.1.54",
     "html2canvas": "^1.4.1",
     "lerna": "5.5.0",
     "prettier": "^2.7.1",
